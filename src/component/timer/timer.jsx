@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import styles from "./timer.module.css";
 
 const Timer = (props) => {
   const [time, setTime] = useState("00:00:00");
@@ -20,7 +21,8 @@ const Timer = (props) => {
       console.log("unmounted");
     };
   }, []);
-  return <div>{time}</div>;
+
+  return <div className={styles.timer}>{time}</div>;
 };
 
 export default Timer;
