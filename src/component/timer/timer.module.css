@@ -1,3 +1,13 @@
+@value colorBlue,colorWhite from "../../common/color.css";
+
 .timer {
   font-size: 4rem;
+  padding: 0.2em 0.5em;
+  border-radius: 0.25em;
+  display: inline-block;
+}
+
+.timer:hover {
+  background-color: colorWhite;
+  color: colorBlue;
 }

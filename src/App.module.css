@@ -1,0 +1,7 @@
+@value colorWhite,colorBlue from "./common/color.css";
+
+.app {
+  background-color: colorBlue;
+  height: 100vh;
+  color: colorWhite;
+}
