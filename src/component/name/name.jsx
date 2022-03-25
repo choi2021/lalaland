@@ -41,7 +41,7 @@ const Name = (props) => {
           />
         ) : (
           <span className={`${styles.name} ${activateName(onName)}`}>
-            {name}
+            Welcome {name}!
           </span>
         )}
       </form>
