@@ -18,7 +18,7 @@ const Todo = ({ type, onDelete, onMove, todo }) => {
   return (
     <li className={styles.container}>
       <p className={styles.text}>{todo.text}</p>
-      {type === "Pending" && (
+      {type === "pending" && (
         <div className={styles.btns}>
           <button className={styles.btn} onClick={handleDelete}>
             <FaRegTrashAlt></FaRegTrashAlt>
@@ -28,7 +28,7 @@ const Todo = ({ type, onDelete, onMove, todo }) => {
           </button>
         </div>
       )}
-      {type === "Finished" && (
+      {type === "finished" && (
         <div className={styles.btns}>
           <button className={styles.btn} onClick={handleMove}>
             <FaHandPointLeft></FaHandPointLeft>

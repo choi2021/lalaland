@@ -37,14 +37,14 @@ const TodoContainer = ({
         </button>
       </div>
       <TodoList
-        type="Pending"
+        type="pending"
         todos={pendingTodos}
         onDelete={onDelete}
         onAdd={onAdd}
         onMove={onMove}
       />
       <TodoList
-        type="Finished"
+        type="finished"
         todos={finishedTodos}
         onDelete={onDelete}
         onAdd={onAdd}
