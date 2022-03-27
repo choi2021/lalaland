@@ -1,11 +1,12 @@
 @value colorBlue,colorWhite from "../../common/color.css";
+@value borderRadius,border from "../../common/size.css";
 
 .input {
   font-size: 1.5rem;
   padding: 0.5em 0.6em;
   background-color: transparent;
-  border: 2px solid colorWhite;
-  border-radius: 0.5em;
+  border: border;
+  border-radius: borderRadius;
   color: colorWhite;
   text-align: center;
 }
@@ -20,8 +21,8 @@
 
 .name {
   padding: 0.5em 1em;
-  border-radius: 0.5em;
-  border: 2px solid colorWhite;
+  border-radius: borderRadius;
+  border: border;
   font-size: 1.5rem;
   display: none;
 }

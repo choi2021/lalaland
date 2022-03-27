@@ -1,7 +1,19 @@
 @value colorWhite,colorBlue from "./common/color.css";
 
+* {
+  box-sizing: border-box;
+}
+
 .app {
   background-color: colorBlue;
   height: 100vh;
   color: colorWhite;
+}
+
+.header {
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em 1em;
 }

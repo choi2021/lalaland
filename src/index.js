@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Weather from "./service/weather/weather";
+import Weather from "./service/weatherService/weatherService";
 
-const weather = new Weather(process.env.REACT_APP_WEATHER_API_KEY);
+const weatherService = new Weather("883f192704568f81e08ccd7d56a18e78");
 
 ReactDOM.render(
   <React.StrictMode>
-    <App weather={weather} />
+    <App weatherService={weatherService} />
   </React.StrictMode>,
   document.getElementById("root")
 );
