@@ -1,16 +1,23 @@
 import React from "react";
 import Todo from "../todo/todo";
 import styles from "./todoList.module.css";
-const TodoList = ({ type, todos }) => {
+const TodoList = ({ type, todos, onDelete, onAdd, onMove }) => {
   return (
-    <section>
-      <h1>{type.toUpperCase()}</h1>
-      <ul className={styles.container}>
+    <div className={styles.container}>
+      <h1 className={styles.title}>{type.toUpperCase()}</h1>
+      <ul className={styles.list}>
         {todos.map((item) => (
-          <Todo {...item} key={item.id} type={type} />
+          <Todo
+            key={item.id}
+            todo={item}
+            type={type}
+            onDelete={onDelete}
+            onAdd={onAdd}
+            onMove={onMove}
+          />
         ))}
       </ul>
-    </section>
+    </div>
   );
 };
 

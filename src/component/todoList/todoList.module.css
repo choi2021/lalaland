@@ -1,0 +1,21 @@
+@value colorBlue,colorWhite from "../../common/color.css";
+@value borderRadius,border from "../../common/size.css";
+
+.container {
+  text-align: center;
+  margin: 0.5em 0;
+  width: 100%;
+  border-radius: borderRadius;
+  border: border;
+  padding: 1em 2em;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+}
