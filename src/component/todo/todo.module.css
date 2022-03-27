@@ -1,0 +1,27 @@
+@value colorWhite from "../../common/color.css";
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  color: colorWhite;
+  cursor: pointer;
+}

@@ -1,4 +1,4 @@
 @value colorWhite from "./color.css";
 
-@value borderRadius:0.5em;
+@value borderRadius:1em;
 @value border:2px solid colorWhite;
