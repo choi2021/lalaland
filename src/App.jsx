@@ -64,7 +64,7 @@ function App({ weatherService, todoDB }) {
         <Name></Name>
         <Weather weatherService={weatherService}></Weather>
       </header>
-      <div>
+      <div className={styles.todo}>
         <TodoContainer
           pendingTodos={pendingTodos}
           finishedTodos={finishedTodos}
