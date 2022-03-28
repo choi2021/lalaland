@@ -8,6 +8,11 @@
   border-radius: borderRadius;
   border: border;
   padding: 1em 2em;
+  display: none;
+}
+
+.container.active {
+  display: block;
 }
 
 .title {
