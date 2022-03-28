@@ -1,0 +1,34 @@
+@value colorWhite,colorBlue from "../../common/color.css";
+@value borderRadius,border from "../../common/size.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  background-color: tomato;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  border: border;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: colorWhite;
+  margin-right: 0.3em;
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+}

@@ -1,4 +1,4 @@
-@value colorWhite from "../../common/color.css";
+@value colorWhite,colorBlue from "../../common/color.css";
 @value borderRadius,border from "../../common/size.css";
 .container {
   width: 20rem;
@@ -35,14 +35,19 @@
   align-items: center;
   font-size: 1.5rem;
   background-color: transparent;
-  border: none;
+  border: border;
+  border-radius: borderRadius;
   color: colorWhite;
   cursor: pointer;
   transform: rotate(90deg);
   transition: all ease 300ms;
+  width: 3rem;
+  height: 3rem;
 }
 
 .btn.active,
 .header:hover .btn {
   transform: none;
+  color: colorBlue;
+  background-color: colorWhite;
 }

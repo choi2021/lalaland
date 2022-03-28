@@ -10,6 +10,12 @@
   color: colorWhite;
 }
 
+.menuAndTodo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .header {
   height: 8rem;
   display: flex;

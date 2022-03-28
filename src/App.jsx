@@ -4,6 +4,7 @@ import Name from "./component/name/name";
 import Timer from "./component/timer/timer";
 import { useEffect, useState } from "react";
 import TodoContainer from "./component/todoContainer/todoContainer";
+import Sidebar from "./component/sidebar/sidebar";
 
 function App({ weatherService, todoDB }) {
   const [pendingTodos, setPendingTodos] = useState([]);
@@ -64,14 +65,17 @@ function App({ weatherService, todoDB }) {
         <Name></Name>
         <Weather weatherService={weatherService}></Weather>
       </header>
-      <div className={styles.todo}>
-        <TodoContainer
-          pendingTodos={pendingTodos}
-          finishedTodos={finishedTodos}
-          onDelete={deleteTodo}
-          onAdd={addTodo}
-          onMove={moveTodo}
-        ></TodoContainer>
+      <div className={styles.menuAndTodo}>
+        <Sidebar></Sidebar>
+        <div className={styles.todo}>
+          <TodoContainer
+            pendingTodos={pendingTodos}
+            finishedTodos={finishedTodos}
+            onDelete={deleteTodo}
+            onAdd={addTodo}
+            onMove={moveTodo}
+          ></TodoContainer>
+        </div>
       </div>
     </div>
   );

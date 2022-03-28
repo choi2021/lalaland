@@ -1,0 +1,28 @@
+@value colorWhite,colorBlue from "../../common/color.css";
+@value borderRadius,border from "../../common/size.css";
+
+.wrapper {
+  padding: 0.5em;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  font-size: 1.5rem;
+  padding: 1em;
+}
+
+.bar {
+  margin-left: 1.5em;
+  height: 100%;
+  width: 2px;
+  background-color: colorWhite;
+}
