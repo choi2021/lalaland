@@ -1,10 +1,10 @@
-@value colorWhite,colorBlue from "./common/color.css";
+@value colorWhite,colorBlue from "../../common/color.css";
 
 * {
   box-sizing: border-box;
 }
 
-.app {
+.home {
   background-color: colorBlue;
   height: 100vh;
   color: colorWhite;
@@ -12,6 +12,7 @@
 
 .menuAndTodo {
   width: 100%;
+  padding: 0 1em;
   display: flex;
   justify-content: space-between;
 }
