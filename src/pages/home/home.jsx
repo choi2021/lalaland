@@ -5,14 +5,23 @@ import Timer from "../../component/timer/timer";
 import { useEffect, useState } from "react";
 import TodoContainer from "../../component/todoContainer/todoContainer";
 import Sidebar from "../../component/sidebar/sidebar";
+import Music from "../../component/music/music";
+import playlist from "../../playlist.json";
 
 function Home({ weatherService, todoDB }) {
   const [pendingTodos, setPendingTodos] = useState([]);
   const [finishedTodos, setFinishedTodos] = useState([]);
+  const [musics, setMusics] = useState([]);
+  const [selectedMusic, setSelectedMusic] = useState({});
 
   useEffect(() => {
     getTodo("pending");
     getTodo("finished");
+  }, []);
+
+  useEffect(() => {
+    setMusics([playlist.musics]);
+    setSelectedMusic(playlist.musics[0]);
   }, []);
 
   const getTodo = (type) => {
@@ -63,6 +72,7 @@ function Home({ weatherService, todoDB }) {
       <header className={styles.header}>
         <Timer></Timer>
         <Name></Name>
+        <Music selected={selectedMusic}></Music>
         <Weather weatherService={weatherService}></Weather>
       </header>
       <div className={styles.menuAndTodo}>

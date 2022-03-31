@@ -31,8 +31,6 @@ const TodoContainer = ({
     });
   };
 
-  console.log(onBtn);
-
   return (
     <section className={styles.container}>
       <div className={styles.header}>
