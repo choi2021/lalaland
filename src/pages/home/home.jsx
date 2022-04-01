@@ -13,6 +13,7 @@ function Home({ weatherService, todoDB }) {
   const [finishedTodos, setFinishedTodos] = useState([]);
   const [musics, setMusics] = useState([]);
   const [selectedMusic, setSelectedMusic] = useState({});
+  const [trackIndex, setTrackIndex] = useState(0);
 
   useEffect(() => {
     getTodo("pending");
@@ -20,9 +21,39 @@ function Home({ weatherService, todoDB }) {
   }, []);
 
   useEffect(() => {
-    setMusics([playlist.musics]);
+    setMusics(playlist.musics);
     setSelectedMusic(playlist.musics[0]);
   }, []);
+
+  const shuffleMusics = () => {
+    const arr = Array.from(Array(musics.length), (_, k) => k);
+    let newArray = [];
+    while (newArray.length < arr.length) {
+      let ranNum = parseInt(Math.random() * arr.length);
+      if (newArray.find((num) => num === ranNum)) {
+        continue;
+      }
+      newArray.push(ranNum);
+    }
+    setMusics((prev) => {
+      return newArray.map((item) => prev[item]);
+    });
+    setSelectedMusic(musics[0]);
+  };
+
+  const setNextSong = () => {
+    setTrackIndex((curr) => {
+      return curr + 1 > musics.length ? 0 : curr + 1;
+    });
+    setSelectedMusic(musics[trackIndex]);
+  };
+
+  const setPrevSong = () => {
+    setTrackIndex((curr) => {
+      return curr - 1 < 0 ? musics.length - 1 : curr - 1;
+    });
+    setSelectedMusic(musics[trackIndex]);
+  };
 
   const getTodo = (type) => {
     todoDB.getTodo(type, (todos) => {
@@ -72,7 +103,12 @@ function Home({ weatherService, todoDB }) {
       <header className={styles.header}>
         <Timer></Timer>
         <Name></Name>
-        <Music selected={selectedMusic}></Music>
+        <Music
+          selected={selectedMusic}
+          setNextSong={setNextSong}
+          setPrevSong={setPrevSong}
+          setRandomSong={shuffleMusics}
+        ></Music>
         <Weather weatherService={weatherService}></Weather>
       </header>
       <div className={styles.menuAndTodo}>
