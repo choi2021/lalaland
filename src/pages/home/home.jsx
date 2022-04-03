@@ -103,13 +103,15 @@ function Home({ weatherService, todoDB }) {
       <header className={styles.header}>
         <Timer></Timer>
         <Name></Name>
-        <Music
-          selected={selectedMusic}
-          setNextSong={setNextSong}
-          setPrevSong={setPrevSong}
-          setRandomSong={shuffleMusics}
-        ></Music>
-        <Weather weatherService={weatherService}></Weather>
+        <div className={styles.musicAndWeather}>
+          <Music
+            selected={selectedMusic}
+            setNextSong={setNextSong}
+            setPrevSong={setPrevSong}
+            setRandomSong={shuffleMusics}
+          ></Music>
+          <Weather weatherService={weatherService}></Weather>
+        </div>
       </header>
       <div className={styles.menuAndTodo}>
         <Sidebar></Sidebar>

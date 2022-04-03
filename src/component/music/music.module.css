@@ -2,16 +2,16 @@
 @value borderRadius,border from "../../common/size.css";
 
 .container {
-  width: 15rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 0.5em;
 }
 
 .title {
   width: 100%;
-  padding: 0.25em 1em;
-  font-size: 1.15rem;
+  padding: 0.25em 0.5em;
+  font-size: 0.8rem;
   border: border;
   border-radius: borderRadius;
   margin-bottom: 0.5em;
@@ -27,8 +27,8 @@
   cursor: pointer;
   color: colorWhite;
   background-color: transparent;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin-right: 0.5em;
   border: border;
   border-radius: 50%;

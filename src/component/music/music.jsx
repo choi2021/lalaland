@@ -15,7 +15,7 @@ const Music = ({ selected, setNextSong, setPrevSong, setRandomSong }) => {
   const audioRef = useRef();
 
   useEffect(() => {
-    audioRef.current.volume = 0.2;
+    audioRef.current.volume = 0.3;
     if (isPlaying) {
       audioRef.current.play();
     }

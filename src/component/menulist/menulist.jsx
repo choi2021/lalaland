@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./menulist.module.css";
 
-const Menulist = (props) => {
+const Menulist = ({ isClicked }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.bar}></div>

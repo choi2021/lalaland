@@ -1,15 +1,17 @@
 @value borderRadius,border from "../../common/size.css";
 
 .container {
-  padding: 0.2em 1.5em;
+  padding: 0.2em 1em;
   border: border;
   border-radius: borderRadius;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .city {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .tempAndIcon {
@@ -19,10 +21,10 @@
 }
 
 .temp {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
 
 .icon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.3rem;
+  height: 2.3rem;
 }
