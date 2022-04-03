@@ -43,7 +43,7 @@ function Home({ weatherService, todoDB }) {
 
   const setNextSong = () => {
     setTrackIndex((curr) => {
-      return curr + 1 > musics.length ? 0 : curr + 1;
+      return curr + 1 >= musics.length ? 0 : curr + 1;
     });
     setSelectedMusic(musics[trackIndex]);
   };
@@ -97,6 +97,8 @@ function Home({ weatherService, todoDB }) {
       todoDB.setTodo(todo, "pending");
     }
   };
+
+  console.log(musics);
 
   return (
     <div className={styles.home}>
