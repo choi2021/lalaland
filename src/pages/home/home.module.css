@@ -30,3 +30,13 @@
   display: flex;
   align-items: center;
 }
+
+.title {
+  font-size: 6rem;
+  font-family: Yasashii;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

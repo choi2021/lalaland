@@ -2,8 +2,8 @@
 @value borderRadius,border from "../../common/size.css";
 
 .input {
-  font-size: 1.5rem;
-  padding: 0.5em 0.6em;
+  font-size: 1rem;
+  padding: 0.5em;
   background-color: transparent;
   border: border;
   border-radius: borderRadius;
@@ -20,10 +20,10 @@
 }
 
 .name {
-  padding: 0.5em 1em;
+  padding: 0.5em;
   border-radius: borderRadius;
   border: border;
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: none;
 }
 

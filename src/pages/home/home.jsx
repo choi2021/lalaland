@@ -7,6 +7,7 @@ import TodoContainer from "../../component/todoContainer/todoContainer";
 import Sidebar from "../../component/sidebar/sidebar";
 import Music from "../../component/music/music";
 import playlist from "../../playlist.json";
+import "../../font/font.css";
 
 function Home({ weatherService, todoDB }) {
   const [pendingTodos, setPendingTodos] = useState([]);
@@ -127,6 +128,7 @@ function Home({ weatherService, todoDB }) {
           ></TodoContainer>
         </div>
       </div>
+      <span className={styles.title}>LaLa Land</span>
     </div>
   );
 }
