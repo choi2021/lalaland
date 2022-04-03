@@ -2,7 +2,8 @@
 @value borderRadius,border from "../../common/size.css";
 
 .wrapper {
-  padding: 0.5em;
+  transform: translate(17px);
+  padding: 0.5em 1em;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -16,13 +17,70 @@
 }
 
 .item {
-  font-size: 1.5rem;
+  width: 100%;
+  font-size: 1.3rem;
   padding: 1em;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: colorWhite;
+  color: colorBlue;
+}
+
+.item.firstRowIn {
+  animation: menuIn 500ms ease-in forwards;
+}
+
+.item.secondRowIn {
+  animation: menuIn 750ms ease-in forwards;
+}
+
+.item.thirdRowIn {
+  animation: menuIn 1000ms ease-in forwards;
+}
+
+.item.firstRowOut {
+  animation: menuOut 600ms ease-in forwards;
+}
+
+.item.secondRowOut {
+  animation: menuOut 400ms ease-in forwards;
+}
+
+.item.thirdRowOut {
+  animation: menuOut 200ms ease-in forwards;
 }
 
 .bar {
-  margin-left: 1.5em;
   height: 100%;
   width: 2px;
   background-color: colorWhite;
+  opacity: 0;
+}
+
+.bar.active {
+  animation: menuIn 250ms ease-in forwards;
+}
+
+.bar.inactive {
+  animation: menuOut 800ms ease-in forwards;
+}
+
+@keyframes menuIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes menuOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
