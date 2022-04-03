@@ -1,7 +1,6 @@
 @value colorWhite,colorBlue from "../../common/color.css";
 @value borderRadius,border from "../../common/size.css";
 .container {
-  width: 20rem;
   color: colorWhite;
   display: flex;
   flex-direction: column;
@@ -33,16 +32,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   background-color: transparent;
   border: border;
-  border-radius: borderRadius;
+  border-radius: 50%;
   color: colorWhite;
   cursor: pointer;
   transform: rotate(90deg);
   transition: all ease 300ms;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .btn.active,

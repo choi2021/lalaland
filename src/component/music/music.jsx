@@ -53,9 +53,12 @@ const Music = ({ selected, setNextSong, setPrevSong, setRandomSong }) => {
   return (
     <section className={styles.container}>
       <audio src={selected.address} ref={audioRef} loop={onReplay}></audio>
-      <div>{selected.title}</div>
+      <div className={styles.title}>{selected.title}</div>
       <div className={styles.btns}>
-        <button className={styles.btn} onClick={handleReplay}>
+        <button
+          className={`${styles.btn} ${onReplay ? styles.active : null}`}
+          onClick={handleReplay}
+        >
           <FaRedoAlt />
         </button>
         <button className={styles.btn} onClick={handlePrevSong}>
