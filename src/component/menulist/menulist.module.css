@@ -1,6 +1,11 @@
 @value colorWhite,colorBlue from "../../common/color.css";
 @value borderRadius,border from "../../common/size.css";
 
+a {
+  text-decoration: none;
+  color: colorWhite;
+}
+
 .wrapper {
   transform: translate(17px);
   padding: 0.5em 1em;
@@ -23,7 +28,8 @@
   cursor: pointer;
 }
 
-.item:hover {
+.item:hover,
+.item:hover a {
   background-color: colorWhite;
   color: colorBlue;
 }
