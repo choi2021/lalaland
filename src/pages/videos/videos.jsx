@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Header from "../../component/header/header";
+import Sidebar from "../../component/sidebar/sidebar";
+import styles from "./videos.module.css";
 
 const Videos = ({ youtube }) => {
   const [videos, setVideos] = useState([]);
@@ -7,11 +10,17 @@ const Videos = ({ youtube }) => {
   }, []);
 
   return (
-    <ul>
-      {videos.map((video) => (
-        <li key={video.etag}>{video.snippet.title}</li>
-      ))}
-    </ul>
+    <div className={styles.home}>
+      <Header></Header>
+      <div className={styles.main}>
+        <Sidebar></Sidebar>
+      </div>
+      <ul>
+        {videos.map((video) => (
+          <li key={video.etag}>{video.snippet.title}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

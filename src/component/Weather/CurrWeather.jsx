@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Weather.module.css";
+import styles from "./CurrWeather.module.css";
 
 const CurrWeather = ({ weatherService }) => {
   const [weatherInfo, setWeatherInfo] = useState({});

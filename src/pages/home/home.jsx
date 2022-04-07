@@ -1,13 +1,10 @@
 import styles from "./home.module.css";
-import Weather from "../../component/Weather/Weather";
-import Name from "../../component/name/name";
-import Timer from "../../component/timer/timer";
 import { useEffect, useState } from "react";
 import TodoContainer from "../../component/todoContainer/todoContainer";
 import Sidebar from "../../component/sidebar/sidebar";
-import Music from "../../component/music/music";
 import playlist from "../../playlist.json";
 import "../../font/font.css";
+import Header from "../../component/header/header";
 
 function Home({ weatherService, todoDB }) {
   const [pendingTodos, setPendingTodos] = useState([]);
@@ -99,23 +96,16 @@ function Home({ weatherService, todoDB }) {
     }
   };
 
-  console.log(musics);
-
   return (
     <div className={styles.home}>
-      <header className={styles.header}>
-        <Timer></Timer>
-        <Name></Name>
-        <div className={styles.musicAndWeather}>
-          <Music
-            selected={selectedMusic}
-            setNextSong={setNextSong}
-            setPrevSong={setPrevSong}
-            setRandomSong={shuffleMusics}
-          ></Music>
-          <Weather weatherService={weatherService}></Weather>
-        </div>
-      </header>
+      <Header
+        selected={selectedMusic}
+        setNextSong={setNextSong}
+        setPrevSong={setPrevSong}
+        shuffleMusics={shuffleMusics}
+        weatherService={weatherService}
+        location="home"
+      ></Header>
       <div className={styles.menuAndTodo}>
         <Sidebar></Sidebar>
         <div className={styles.todo}>
