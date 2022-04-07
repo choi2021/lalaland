@@ -1,25 +1,35 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../component/header/header";
 import Sidebar from "../../component/sidebar/sidebar";
+import Video from "../../component/video/video";
 import styles from "./videos.module.css";
 
-const Videos = ({ youtube }) => {
+const Videos = ({ youtube, weatherService }) => {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
     youtube.search().then((items) => setVideos(items));
   }, []);
 
+  console.log(videos);
+
   return (
-    <div className={styles.home}>
-      <Header></Header>
+    <div className={styles.videos}>
+      <Header weatherService={weatherService} location="videos"></Header>
       <div className={styles.main}>
         <Sidebar></Sidebar>
+        <ul>
+          {videos.map((video) => (
+            <Video
+              id={video.id}
+              key={video.id}
+              imgInfo={video.snippet.thumbnails}
+              title={video.snippet.title}
+            >
+              {video.snippet.title}
+            </Video>
+          ))}
+        </ul>
       </div>
-      <ul>
-        {videos.map((video) => (
-          <li key={video.etag}>{video.snippet.title}</li>
-        ))}
-      </ul>
     </div>
   );
 };
