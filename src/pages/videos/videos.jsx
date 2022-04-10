@@ -10,14 +10,17 @@ const Videos = ({ youtube, weatherService }) => {
     youtube.search().then((items) => setVideos(items));
   }, []);
 
-  console.log(videos);
-
   return (
     <div className={styles.videos}>
-      <Header weatherService={weatherService} location="videos"></Header>
+      <div className={styles.bg}></div>
+      <div className={styles.header}>
+        <Header weatherService={weatherService} location="videos"></Header>
+      </div>
       <div className={styles.main}>
-        <Sidebar></Sidebar>
-        <ul>
+        <div className={styles.menu}>
+          <Sidebar></Sidebar>
+        </div>
+        <ul className={styles.list}>
           {videos.map((video) => (
             <Video
               id={video.id}
