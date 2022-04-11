@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./menulist.module.css";
 
-const Menulist = ({ isClicked }) => {
+const setDirection = (direction) => {
+  if (direction === "row") {
+    return styles.row;
+  } else {
+    return styles.column;
+  }
+};
+
+const Menulist = ({ isClicked, direction }) => {
   return (
     <div className={styles.wrapper}>
       <div
@@ -10,7 +18,7 @@ const Menulist = ({ isClicked }) => {
           isClicked ? styles.active : styles.inactive
         }`}
       ></div>
-      <ul className={styles.list}>
+      <ul className={`${styles.list} ${setDirection(direction)}`}>
         <li
           className={`${styles.item} ${
             isClicked ? styles.firstRowIn : styles.firstRowOut
