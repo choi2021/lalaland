@@ -13,11 +13,13 @@ const setDirection = (direction) => {
 const Menulist = ({ isClicked, direction }) => {
   return (
     <div className={styles.wrapper}>
-      <div
-        className={`${styles.bar} ${
-          isClicked ? styles.active : styles.inactive
-        }`}
-      ></div>
+      {direction === "column" && (
+        <div
+          className={`${styles.bar} ${
+            isClicked ? styles.active : styles.inactive
+          }`}
+        ></div>
+      )}
       <ul className={`${styles.list} ${setDirection(direction)}`}>
         <li
           className={`${styles.item} ${

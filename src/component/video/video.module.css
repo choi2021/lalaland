@@ -2,13 +2,13 @@
 
 .wrapper {
   width: 35%;
-  padding: 2em;
+  padding: 1em 2em;
 }
 
 .video {
   position: relative;
   width: 100%;
-  height: 15rem;
+  height: 18rem;
   display: flex;
   align-items: center;
 }

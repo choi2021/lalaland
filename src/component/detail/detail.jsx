@@ -2,17 +2,24 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Sidebar from "../sidebar/sidebar";
 import styles from "./detail.module.css";
+import { FaArrowLeft } from "react-icons/fa";
 
 const Detail = (props) => {
   const { id } = useParams();
-  const handleClick = () => {};
   return (
     <div className={styles.container}>
       {id !== undefined ? (
         <>
-          <div className={styles.menu}>
-            <Sidebar direction="row" />
-          </div>
+          <header className={styles.header}>
+            <div className={styles.menu}>
+              <Sidebar direction="row" />
+              <Link to={"/videos"}>
+                <button className={styles.btn}>
+                  <FaArrowLeft></FaArrowLeft>
+                </button>
+              </Link>
+            </div>
+          </header>
           <div className={styles.wrapper}>
             <iframe
               className={styles.video}

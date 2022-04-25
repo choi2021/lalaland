@@ -6,8 +6,12 @@ import styles from "./videos.module.css";
 
 const Videos = ({ youtube, weatherService }) => {
   const [videos, setVideos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    youtube.search().then((items) => setVideos(items));
+    youtube.search().then((items) => {
+      setVideos(items);
+      setIsLoading(false);
+    });
   }, []);
 
   return (
@@ -20,18 +24,22 @@ const Videos = ({ youtube, weatherService }) => {
         <div className={styles.menu}>
           <Sidebar></Sidebar>
         </div>
-        <ul className={styles.list}>
-          {videos.map((video) => (
-            <Video
-              id={video.id}
-              key={video.id}
-              imgInfo={video.snippet.thumbnails}
-              title={video.snippet.title}
-            >
-              {video.snippet.title}
-            </Video>
-          ))}
-        </ul>
+        {isLoading ? (
+          <span className={styles.loading}> Loading videos... please Wait</span>
+        ) : (
+          <ul className={styles.list}>
+            {videos.map((video) => (
+              <Video
+                id={video.id}
+                key={video.id}
+                imgInfo={video.snippet.thumbnails}
+                title={video.snippet.title}
+              >
+                {video.snippet.title}
+              </Video>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

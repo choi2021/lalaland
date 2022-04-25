@@ -1,6 +1,8 @@
 @value colorWhite,colorBlue from "../../common/color.css";
 
 .videos {
+  width: 100%;
+  height: 100%;
   color: colorWhite;
   position: absolute;
 }
@@ -16,11 +18,20 @@
 }
 
 .main {
+  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu {
-  height: 100px;
+  position: absolute;
+  left: 1.1em;
+  height: 100%;
+}
+
+.loading {
+  font-size: 4rem;
 }
 
 .list {
