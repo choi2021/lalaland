@@ -1,7 +1,7 @@
 @value colorBlue,colorWhite from "../../common/color.css";
 
 .timer {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   padding: 0.2em 0.5em;
   display: inline-block;
 }

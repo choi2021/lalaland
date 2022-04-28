@@ -5,14 +5,17 @@ import Video from "../../component/video/video";
 import styles from "./videos.module.css";
 
 const Videos = ({ youtube, weatherService }) => {
+  const [topic, setTopic] = useState("lalaland");
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    youtube.search().then((items) => {
+    youtube.search(topic).then((items) => {
       setVideos(items);
       setIsLoading(false);
     });
   }, []);
+
+  const handleBtnClick = () => {};
 
   return (
     <div className={styles.videos}>
@@ -20,25 +23,32 @@ const Videos = ({ youtube, weatherService }) => {
       <div className={styles.header}>
         <Header weatherService={weatherService} location="videos"></Header>
       </div>
+      <div className={styles.menu}>
+        <Sidebar></Sidebar>
+      </div>
       <div className={styles.main}>
-        <div className={styles.menu}>
-          <Sidebar></Sidebar>
-        </div>
         {isLoading ? (
-          <span className={styles.loading}> Loading videos... please Wait</span>
+          <span className={styles.loading}> Loading videos... 😅</span>
         ) : (
-          <ul className={styles.list}>
-            {videos.map((video) => (
-              <Video
-                id={video.id}
-                key={video.id}
-                imgInfo={video.snippet.thumbnails}
-                title={video.snippet.title}
-              >
-                {video.snippet.title}
-              </Video>
-            ))}
-          </ul>
+          <>
+            <ul className={styles.btns} onClick={handleBtnClick}>
+              <btn>OST</btn>
+              <btn>OST</btn>
+              <btn>OST</btn>
+            </ul>
+            <ul className={styles.list}>
+              {videos.map((video) => (
+                <Video
+                  id={video.id}
+                  key={video.id}
+                  imgInfo={video.snippet.thumbnails}
+                  title={video.snippet.title}
+                >
+                  {video.snippet.title}
+                </Video>
+              ))}
+            </ul>
+          </>
         )}
       </div>
     </div>

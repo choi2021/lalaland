@@ -16,18 +16,20 @@ const Header = ({
   return (
     <header className={styles.header}>
       <Timer></Timer>
-      <Name></Name>
-      <div className={styles.musicAndWeather}>
-        {location === "home" ? (
-          <Music
-            selected={selected}
-            setNextSong={setNextSong}
-            setPrevSong={setPrevSong}
-            setRandomSong={shuffleMusics}
-          ></Music>
-        ) : null}
-        <CurrWeather weatherService={weatherService}></CurrWeather>
-      </div>
+      {location === "home" ? (
+        <>
+          <Name></Name>
+          <div className={styles.musicAndWeather}>
+            <Music
+              selected={selected}
+              setNextSong={setNextSong}
+              setPrevSong={setPrevSong}
+              setRandomSong={shuffleMusics}
+            ></Music>
+            <CurrWeather weatherService={weatherService}></CurrWeather>
+          </div>
+        </>
+      ) : null}
     </header>
   );
 };

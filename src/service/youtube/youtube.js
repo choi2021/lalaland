@@ -7,9 +7,9 @@ class Youtube {
     };
   }
 
-  async search() {
+  async search(q) {
     const response = await fetch(
-      "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=lalaland&key=AIzaSyDUMBeCMRlTdvxDzhUxolMBKfsWAleEoVc",
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${q}&key=AIzaSyDUMBeCMRlTdvxDzhUxolMBKfsWAleEoVc`,
       this.requestOptions
     );
     const json = await response.json();
