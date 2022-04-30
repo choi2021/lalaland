@@ -1,4 +1,5 @@
 @value colorWhite,colorBlue from "../../common/color.css";
+@value borderRadius,border from "../../common/size.css";
 
 .videos {
   width: 100%;
@@ -17,6 +18,11 @@
   z-index: -1;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+}
+
 .main {
   position: relative;
   display: flex;
@@ -32,6 +38,10 @@
 }
 
 .loading {
+  background-color: colorWhite;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  color: colorBlue;
   font-size: 4rem;
 }
 
@@ -40,4 +50,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.btns {
+  flex-basis: 75%;
+  display: flex;
+  justify-content: center;
+  margin-right: 20%;
+}
+
+.btn {
+  font-size: 1.2rem;
+  padding: 0.5em 1em;
+  margin-right: 1em;
+  background-color: colorWhite;
+  border-radius: borderRadius;
+  color: colorBlue;
+  cursor: pointer;
+  transition: all ease-in 200ms;
+  border: border;
+}
+
+.btn.active,
+.btn:hover {
+  background-color: colorBlue;
+  color: colorWhite;
 }
