@@ -6,7 +6,7 @@ import playlist from "../../playlist.json";
 import "../../font/font.css";
 import Header from "../../component/header/header";
 
-function Home({ weatherService, todoDB }) {
+function Home({ weatherService, todoDB, user }) {
   const [pendingTodos, setPendingTodos] = useState([]);
   const [finishedTodos, setFinishedTodos] = useState([]);
   const [musics, setMusics] = useState([]);

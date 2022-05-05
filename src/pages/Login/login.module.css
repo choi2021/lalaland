@@ -1,0 +1,39 @@
+@value colorWhite,colorBlue,colorBlack from "../../common/color.css";
+@value borderRadius,border from "../../common/size.css";
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: colorBlue;
+  color: colorWhite;
+}
+
+.logo {
+  font-family: Yasashii;
+}
+
+.title {
+  font-size: 5rem;
+  margin-bottom: 2em;
+}
+
+.btns {
+  width: 50%;
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  margin-bottom: 0.5em;
+  padding: 0.5em 0.2em;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: borderRadius;
+  border: 2px solid colorBlack;
+  cursor: pointer;
+}
