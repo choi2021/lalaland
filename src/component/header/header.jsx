@@ -1,6 +1,5 @@
 import React from "react";
 import Music from "../music/music";
-import Name from "../name/name";
 import Timer from "../timer/timer";
 import CurrWeather from "../Weather/CurrWeather";
 import styles from "./header.module.css";

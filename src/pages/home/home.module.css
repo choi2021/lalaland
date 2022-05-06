@@ -1,4 +1,5 @@
 @value colorWhite,colorBlue from "../../common/color.css";
+@value borderRadius,border from "../../common/size.css";
 
 * {
   box-sizing: border-box;
@@ -26,4 +27,24 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.popup {
+  font-size: 1.3rem;
+  border: border;
+  padding: 0.2em;
+  border-radius: 0.4em;
+  position: absolute;
+  left: 49%;
+  top: 3rem;
+  animation: GoingDown ease 3000ms forwards;
+}
+
+@keyframes GoingDown {
+  from {
+    transform: translate(-50%, -200%);
+  }
+  to {
+    transform: translate(-50%, 0%);
+  }
 }

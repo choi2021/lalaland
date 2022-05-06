@@ -24,10 +24,12 @@ function Home({ weatherService, todoDB, user }) {
     setSelectedMusic(playlist.musics[0]);
   }, []);
 
+  console.log(onLogin);
+
   useEffect(() => {
     if (user) {
-      setOnLogin(!onLogin);
-      // setTimeout(() => setOnLogin(!onLogin), 5000);
+      setOnLogin(true);
+      setTimeout(() => setOnLogin(false), 5000);
     }
   }, []);
 
@@ -128,7 +130,7 @@ function Home({ weatherService, todoDB, user }) {
         </div>
       </div>
       <span className={styles.title}>LaLa Land</span>
-      {onLogin && <span className={styles.popup}>Welcome {user}</span>}
+      {onLogin && <span className={styles.popup}>Welcome january2004c</span>}
     </div>
   );
 }
