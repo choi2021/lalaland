@@ -12,6 +12,7 @@ function Home({ weatherService, todoDB, user }) {
   const [musics, setMusics] = useState([]);
   const [selectedMusic, setSelectedMusic] = useState({});
   const [trackIndex, setTrackIndex] = useState(0);
+  const [onLogin, setOnLogin] = useState(false);
 
   useEffect(() => {
     getTodo("pending");
@@ -21,6 +22,13 @@ function Home({ weatherService, todoDB, user }) {
   useEffect(() => {
     setMusics(playlist.musics);
     setSelectedMusic(playlist.musics[0]);
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      setOnLogin(!onLogin);
+      // setTimeout(() => setOnLogin(!onLogin), 5000);
+    }
   }, []);
 
   const shuffleMusics = () => {
@@ -99,6 +107,7 @@ function Home({ weatherService, todoDB, user }) {
   return (
     <div className={styles.home}>
       <Header
+        user={user}
         selected={selectedMusic}
         setNextSong={setNextSong}
         setPrevSong={setPrevSong}
@@ -119,6 +128,7 @@ function Home({ weatherService, todoDB, user }) {
         </div>
       </div>
       <span className={styles.title}>LaLa Land</span>
+      {onLogin && <span className={styles.popup}>Welcome {user}</span>}
     </div>
   );
 }

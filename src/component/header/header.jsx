@@ -12,13 +12,13 @@ const Header = ({
   setPrevSong,
   shuffleMusics,
   weatherService,
+  user,
 }) => {
   return (
     <header className={styles.header}>
       <Timer></Timer>
       {location === "home" ? (
         <>
-          <Name></Name>
           <div className={styles.musicAndWeather}>
             <Music
               selected={selected}
