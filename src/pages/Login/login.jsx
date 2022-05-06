@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
 
-const Login = ({ auth, setUser }) => {
+const Login = ({ auth, setUserObj }) => {
   const navigate = useNavigate();
-
   useEffect(() => {
-    auth.observeChange((userName) => {
-      setUser(userName);
+    auth.observeChange((userObj) => {
+      setUserObj(userObj);
       navigate("/home");
     });
   }, []);

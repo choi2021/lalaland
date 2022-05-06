@@ -3,19 +3,31 @@ import Login from "./pages/Login/login";
 import Home from "./pages/home/home";
 import Videos from "./pages/videos/videos";
 import Detail from "./component/detail/detail";
+import Photos from "./pages/photos/photos";
 
-function Router({ weatherService, todoDB, youtube, auth, user, setUser }) {
+function Router({
+  weatherService,
+  todoDB,
+  youtube,
+  auth,
+  userObj,
+  setUserObj,
+}) {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
-          element={<Login auth={auth} setUser={setUser}></Login>}
+          element={<Login auth={auth} setUserObj={setUserObj}></Login>}
         ></Route>
         <Route
           path="/home"
           element={
-            <Home weatherService={weatherService} todoDB={todoDB} user={user} />
+            <Home
+              weatherService={weatherService}
+              todoDB={todoDB}
+              userObj={userObj}
+            />
           }
         />
         <Route
@@ -25,6 +37,10 @@ function Router({ weatherService, todoDB, youtube, auth, user, setUser }) {
           }
         />
         <Route path="/videos/:id" element={<Detail></Detail>}></Route>
+        <Route
+          path="/photos"
+          element={<Photos weatherService={weatherService}></Photos>}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );

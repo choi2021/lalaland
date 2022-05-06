@@ -11,24 +11,23 @@ const Header = ({
   setPrevSong,
   shuffleMusics,
   weatherService,
-  user,
 }) => {
   return (
     <header className={styles.header}>
       <Timer></Timer>
-      {location === "home" ? (
-        <>
-          <div className={styles.musicAndWeather}>
+      <>
+        <div className={styles.musicAndWeather}>
+          {location === "home" ? (
             <Music
               selected={selected}
               setNextSong={setNextSong}
               setPrevSong={setPrevSong}
               setRandomSong={shuffleMusics}
             ></Music>
-            <CurrWeather weatherService={weatherService}></CurrWeather>
-          </div>
-        </>
-      ) : null}
+          ) : null}
+          <CurrWeather weatherService={weatherService}></CurrWeather>
+        </div>
+      </>
     </header>
   );
 };

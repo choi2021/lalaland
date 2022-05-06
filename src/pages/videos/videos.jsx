@@ -25,9 +25,9 @@ const Videos = ({ youtube, weatherService }) => {
   };
 
   return (
-    <div className={styles.videos}>
+    <section className={styles.videos}>
       <div className={styles.bg}></div>
-      <div className={styles.header}>
+      <header className={styles.header}>
         <Header weatherService={weatherService} location="videos"></Header>
         <div className={styles.btns}>
           <button
@@ -71,11 +71,11 @@ const Videos = ({ youtube, weatherService }) => {
             FAMOUS SCENE
           </button>
         </div>
-      </div>
+      </header>
       <div className={styles.menu}>
         <Sidebar></Sidebar>
       </div>
-      <div className={styles.main}>
+      <main className={styles.main}>
         {isLoading ? (
           <div className={styles.loading}> Loading videos... 😅</div>
         ) : (
@@ -94,8 +94,8 @@ const Videos = ({ youtube, weatherService }) => {
             </ul>
           </>
         )}
-      </div>
-    </div>
+      </main>
+    </section>
   );
 };
 

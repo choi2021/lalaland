@@ -2,9 +2,9 @@ import { useState } from "react";
 import Router from "./Router";
 
 function App(props) {
-  const [user, setUser] = useState();
+  const [userObj, setUserObj] = useState({});
 
-  return <Router user={user} setUser={setUser} {...props}></Router>;
+  return <Router userObj={userObj} setUserObj={setUserObj} {...props}></Router>;
 }
 
 export default App;

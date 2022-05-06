@@ -22,7 +22,7 @@ class Auth {
 
   observeChange(fn) {
     return onAuthStateChanged(this.auth, (user) => {
-      user && fn(user.displayName);
+      user && fn({ uid: user.uid, id: user.displayName });
     });
   }
 }

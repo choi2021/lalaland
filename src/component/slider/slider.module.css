@@ -1,0 +1,31 @@
+@value colorBlue,colorWhite,colorBlack from "../../common/color.css";
+
+.container {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  animation: GoingLeft linear forwards 300ms;
+}
+
+.item {
+  border: colorWhite 2px solid;
+  border-radius: 1em;
+  margin-right: 0.5em;
+  width: 350px;
+  height: 250px;
+}
+
+.img {
+  border-radius: 1em;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes GoingLeft {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateX(200px);
+  }
+}

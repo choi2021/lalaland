@@ -6,8 +6,8 @@ class TodoDB {
     this.db = getDatabase(firebaseApp);
   }
 
-  getTodo(type, fn) {
-    const todoRef = ref(this.db, `users/user1/${type}`);
+  getTodo(type, fn, user = "user1") {
+    const todoRef = ref(this.db, `users/${user}/${type}`);
     onValue(todoRef, (snapshot) => {
       const data = snapshot.val();
       data && fn(data);
@@ -15,12 +15,12 @@ class TodoDB {
     return () => off(todoRef);
   }
 
-  setTodo(todo, type) {
-    set(ref(this.db, `users/user1/${type}/${todo.id}`), { ...todo });
+  setTodo(todo, type, user = "user1") {
+    set(ref(this.db, `users/${user}/${type}/${todo.id}`), { ...todo });
   }
 
-  deleteTodo(todo, type) {
-    remove(ref(this.db, `users/user1/${type}/${todo.id}`));
+  deleteTodo(todo, type, user = "user1") {
+    remove(ref(this.db, `users/${user}/${type}/${todo.id}`));
   }
 }
 
