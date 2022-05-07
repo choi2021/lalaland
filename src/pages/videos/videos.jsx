@@ -18,7 +18,7 @@ const Videos = ({ youtube, weatherService }) => {
       setIsLoading(false);
     });
   }, [topic]);
-
+  console.log(videos);
   const handleBtnClick = (event) => {
     const q = event.currentTarget.dataset.value;
     setTopic("lalaland" + " " + q);
