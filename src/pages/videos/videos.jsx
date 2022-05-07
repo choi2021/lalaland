@@ -73,7 +73,7 @@ const Videos = ({ youtube, weatherService }) => {
         </div>
       </header>
       <div className={styles.menu}>
-        <Sidebar></Sidebar>
+        <Sidebar direction={"column"}></Sidebar>
       </div>
       <main className={styles.main}>
         {isLoading ? (

@@ -22,7 +22,7 @@ const Photos = ({ weatherService }) => {
       </header>
       <main className={styles.main}>
         <div className={styles.menu}>
-          <Sidebar></Sidebar>
+          <Sidebar direction={"column"}></Sidebar>
         </div>
         <div className={styles.sliders}>
           <Slider photoArr={scenePhotos && scenePhotos} slow></Slider>

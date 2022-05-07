@@ -16,6 +16,7 @@ const Sidebar = ({ direction }) => {
   const onClick = () => {
     setIsClicked(!isClicked);
   };
+  console.log(direction);
 
   return (
     <section className={`${styles.container} ${setDirection(direction)}`}>

@@ -26,6 +26,12 @@ a {
   flex-direction: row;
 }
 
+.list.row .item:hover,
+.list.row .item:hover a {
+  background-color: transparent;
+  color: colorWhite;
+}
+
 .item {
   width: 100%;
   font-size: 1.3rem;

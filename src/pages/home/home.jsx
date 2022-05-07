@@ -119,7 +119,7 @@ function Home({ weatherService, todoDB, userObj }) {
         location="home"
       ></Header>
       <div className={styles.menuAndTodo}>
-        <Sidebar></Sidebar>
+        <Sidebar direction={"column"}></Sidebar>
         <div className={styles.todo}>
           <TodoContainer
             pendingTodos={pendingTodos}

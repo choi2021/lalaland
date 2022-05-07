@@ -11,6 +11,7 @@ const setDirection = (direction) => {
 };
 
 const Menulist = ({ isClicked, direction }) => {
+  console.log(direction);
   return (
     <div className={styles.wrapper}>
       {direction === "column" && (
