@@ -25,7 +25,7 @@ const Photos = ({ weatherService }) => {
           <Sidebar></Sidebar>
         </div>
         <div className={styles.sliders}>
-          <Slider photoArr={scenePhotos && scenePhotos}></Slider>
+          <Slider photoArr={scenePhotos && scenePhotos} slow></Slider>
           <Slider photoArr={illustPhotos && illustPhotos}></Slider>
         </div>
       </main>

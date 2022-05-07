@@ -20,10 +20,10 @@
   overflow: hidden;
 }
 
-.menu {
-  z-index: 1000;
-}
-
 .sliders {
-  z-index: -1;
+  overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
 }
