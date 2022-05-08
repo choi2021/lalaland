@@ -9,7 +9,7 @@ const Videos = ({ youtube, weatherService }) => {
   const ostRef = useRef();
   const makingRef = useRef();
   const sceneRef = useRef();
-  const [topic, setTopic] = useState('lalaland');
+  const [topic, setTopic] = useState('lalaland ');
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
