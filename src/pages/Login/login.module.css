@@ -1,4 +1,4 @@
-@value colorWhite,colorBlue,colorBlack from "../../common/color.css";
+@value colorIvory,colorLightYellow,colorBlack from "../../common/color.css";
 @value borderRadius,border from "../../common/size.css";
 
 .container {
@@ -6,19 +6,19 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: colorBlue;
-  color: colorWhite;
-}
-
-.logo {
-  font-family: Yasashii;
+  background: url('/public/img/login.jpg') center/cover;
+  color: colorBlack;
 }
 
 .title {
-  font-size: 5rem;
-  margin-bottom: 2em;
+  font-family: Yasashii;
+  font-size: 4.5rem;
+}
+
+.logo {
+  font-size: 5.5rem;
 }
 
 .btns {
@@ -29,11 +29,18 @@
 }
 
 .btn {
+  font-family: Yasashii;
+  background-color: colorIvory;
   margin-bottom: 0.5em;
   padding: 0.5em 0.2em;
   font-weight: bold;
   font-size: 1.5rem;
-  border-radius: borderRadius;
-  border: 2px solid colorBlack;
+  border-radius: 0.5em;
+  border: 1.5px solid colorBlack;
+  box-shadow: 8px 2.5px 2.5px colorBlack;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-color: colorLightYellow;
 }

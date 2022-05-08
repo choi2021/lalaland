@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import styles from "./login.module.css";
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styles from './login.module.css';
 
 const Login = ({ auth, setUserObj }) => {
   const navigate = useNavigate();
   useEffect(() => {
     auth.observeChange((userObj) => {
       setUserObj(userObj);
-      navigate("/home");
+      navigate('/home');
     });
   }, []);
 
