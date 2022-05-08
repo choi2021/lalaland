@@ -3,11 +3,11 @@
 .container {
   width: 100%;
   display: flex;
-  animation: SlideLeft ease-in 150s infinite;
+  animation: SlideLeft ease-in 100s infinite;
 }
 
 .container.duration {
-  animation: SlideLeft ease-in 155s infinite;
+  animation: SlideLeft ease-in 105s infinite;
 }
 
 .container:hover,
@@ -37,15 +37,12 @@
   49.9% {
     opacity: 1;
   }
-  50% {
+  70% {
     transform: translateX(-500vw);
     opacity: 0;
   }
-  50.1% {
-    transform: translateX(120vw);
-    opacity: 1;
-  }
-  52% {
+  70.1% {
+    transform: translateX(100vw);
     opacity: 1;
   }
   100% {

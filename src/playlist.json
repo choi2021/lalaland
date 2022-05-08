@@ -1,6 +1,10 @@
 {
   "musics": [
     {
+      "title": "city of stars",
+      "address": "/music/city of stars.mp3"
+    },
+    {
       "title": "A lovely night",
       "address": "/music/a lovely night.mp3"
     },
@@ -11,10 +15,6 @@
     {
       "title": "Audition",
       "address": "/music/Audition.mp3"
-    },
-    {
-      "title": "city of stars",
-      "address": "/music/city of stars.mp3"
     },
     {
       "title": "Herman's Habit",

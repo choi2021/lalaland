@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
-import Header from "../../component/header/header";
-import Sidebar from "../../component/sidebar/sidebar";
-import Video from "../../component/video/video";
-import styles from "./videos.module.css";
+import React, { useEffect, useRef, useState } from 'react';
+import Header from '../../component/header/header';
+import Sidebar from '../../component/sidebar/sidebar';
+import Video from '../../component/video/video';
+import styles from './videos.module.css';
 
 const Videos = ({ youtube, weatherService }) => {
   const defaultRef = useRef();
   const ostRef = useRef();
   const makingRef = useRef();
   const sceneRef = useRef();
-  const [topic, setTopic] = useState("lalaland");
+  const [topic, setTopic] = useState('lalaland');
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -21,19 +21,19 @@ const Videos = ({ youtube, weatherService }) => {
   console.log(videos);
   const handleBtnClick = (event) => {
     const q = event.currentTarget.dataset.value;
-    setTopic("lalaland" + " " + q);
+    setTopic('lalaland' + ' ' + q);
   };
 
   return (
     <section className={styles.videos}>
       <div className={styles.bg}></div>
       <header className={styles.header}>
-        <Header weatherService={weatherService} location="videos"></Header>
+        <Header weatherService={weatherService} location='videos'></Header>
         <div className={styles.btns}>
           <button
-            data-value={""}
+            data-value={''}
             className={`${styles.btn} ${
-              topic === "lalaland " ? styles.active : null
+              topic === 'lalaland ' ? styles.active : null
             }`}
             ref={defaultRef}
             onClick={handleBtnClick}
@@ -41,9 +41,9 @@ const Videos = ({ youtube, weatherService }) => {
             All
           </button>
           <button
-            data-value={"OST"}
+            data-value={'OST'}
             className={`${styles.btn} ${
-              topic === "lalaland OST" ? styles.active : null
+              topic === 'lalaland OST' ? styles.active : null
             }`}
             ref={ostRef}
             onClick={handleBtnClick}
@@ -51,9 +51,9 @@ const Videos = ({ youtube, weatherService }) => {
             OST
           </button>
           <button
-            data-value={"Making"}
+            data-value={'Making'}
             className={`${styles.btn} ${
-              topic === "lalaland Making" ? styles.active : null
+              topic === 'lalaland Making' ? styles.active : null
             }`}
             ref={makingRef}
             onClick={handleBtnClick}
@@ -61,9 +61,9 @@ const Videos = ({ youtube, weatherService }) => {
             Making
           </button>
           <button
-            data-value={"Scene"}
+            data-value={'Scene'}
             className={`${styles.btn} ${
-              topic === "lalaland Scene" ? styles.active : null
+              topic === 'lalaland Scene' ? styles.active : null
             }`}
             ref={sceneRef}
             onClick={handleBtnClick}
@@ -73,7 +73,7 @@ const Videos = ({ youtube, weatherService }) => {
         </div>
       </header>
       <div className={styles.menu}>
-        <Sidebar direction={"column"}></Sidebar>
+        <Sidebar direction={'column'}></Sidebar>
       </div>
       <main className={styles.main}>
         {isLoading ? (
