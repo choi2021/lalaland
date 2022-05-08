@@ -9,7 +9,7 @@
   background-color: colorBlue;
   height: 100vh;
   color: colorWhite;
-  background: url("/public/img/bg.jpg") center/cover;
+  background: url('/public/img/bg.jpg') center/cover;
 }
 
 .menuAndTodo {
@@ -32,7 +32,7 @@
 .popup {
   font-size: 1.3rem;
   border: border;
-  padding: 0.2em;
+  padding: 0.5em;
   border-radius: 0.4em;
   position: absolute;
   left: 49%;

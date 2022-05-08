@@ -18,7 +18,6 @@ const Videos = ({ youtube, weatherService }) => {
       setIsLoading(false);
     });
   }, [topic]);
-  console.log(videos);
   const handleBtnClick = (event) => {
     const q = event.currentTarget.dataset.value;
     setTopic('lalaland' + ' ' + q);
@@ -28,7 +27,9 @@ const Videos = ({ youtube, weatherService }) => {
     <section className={styles.videos}>
       <div className={styles.bg}></div>
       <header className={styles.header}>
-        <Header weatherService={weatherService} location='videos'></Header>
+        <div className={styles.timer}>
+          <Header weatherService={weatherService} location='videos'></Header>
+        </div>
         <div className={styles.btns}>
           <button
             data-value={''}
@@ -68,7 +69,7 @@ const Videos = ({ youtube, weatherService }) => {
             ref={sceneRef}
             onClick={handleBtnClick}
           >
-            FAMOUS SCENE
+            Famous Scene
           </button>
         </div>
       </header>
@@ -77,7 +78,7 @@ const Videos = ({ youtube, weatherService }) => {
       </div>
       <main className={styles.main}>
         {isLoading ? (
-          <div className={styles.loading}> Loading videos... 😅</div>
+          <div className={styles.loading}></div>
         ) : (
           <>
             <ul className={styles.list}>
