@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Menulist from "../menulist/menulist";
-import { FaBars } from "react-icons/fa";
-import styles from "./sidebar.module.css";
+import React, { useState } from 'react';
+import Menulist from '../menulist/menulist';
+import { FaBars } from 'react-icons/fa';
+import styles from './sidebar.module.css';
 
 const setDirection = (direction) => {
-  if (direction === "row") {
+  if (direction === 'row') {
     return styles.row;
   } else {
     return styles.column;
@@ -16,7 +16,6 @@ const Sidebar = ({ direction }) => {
   const onClick = () => {
     setIsClicked(!isClicked);
   };
-  console.log(direction);
 
   return (
     <section className={`${styles.container} ${setDirection(direction)}`}>

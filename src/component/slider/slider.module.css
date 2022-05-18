@@ -3,15 +3,15 @@
 .container {
   width: 100%;
   display: flex;
-  animation: SlideLeft ease-in 100s infinite;
+  animation: SlideLeft ease-in 90s infinite;
 }
 
-.container.duration {
+.container.delayed {
   animation: SlideLeft ease-in 105s infinite;
 }
 
 .container:hover,
-.container.duration:hover {
+.container.delayed:hover {
   animation-play-state: paused;
 }
 

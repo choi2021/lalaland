@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import styles from "./timer.module.css";
+import React, { useEffect, useState } from 'react';
+import styles from './timer.module.css';
 
 const Timer = (props) => {
-  const [time, setTime] = useState("00:00:00");
+  const [time, setTime] = useState('00:00:00');
   useEffect(() => {
     const timer = setInterval(() => {
       const date = new Date();
@@ -18,7 +18,6 @@ const Timer = (props) => {
 
     return () => {
       clearInterval(timer);
-      console.log("unmounted");
     };
   }, []);
 

@@ -14,22 +14,31 @@ const Header = ({
 }) => {
   return (
     <header className={styles.header}>
-      <Timer></Timer>
-      <>
-        <div className={styles.musicAndWeather}>
+      <div className={styles.leftBox}>
+        <Timer></Timer>
+        {location === 'home' && (
+          <Music
+            selected={selected}
+            setNextSong={setNextSong}
+            setPrevSong={setPrevSong}
+            setRandomSong={shuffleMusics}
+          ></Music>
+        )}
+      </div>
+
+      {location === 'home' && (
+        <div className={styles.rightBox}>
           {location === 'home' && (
-            <>
-              <Music
-                selected={selected}
-                setNextSong={setNextSong}
-                setPrevSong={setPrevSong}
-                setRandomSong={shuffleMusics}
-              ></Music>
-              <CurrWeather weatherService={weatherService}></CurrWeather>
-            </>
+            <Music
+              selected={selected}
+              setNextSong={setNextSong}
+              setPrevSong={setPrevSong}
+              setRandomSong={shuffleMusics}
+            ></Music>
           )}
+          <CurrWeather weatherService={weatherService}></CurrWeather>
         </div>
-      </>
+      )}
     </header>
   );
 };

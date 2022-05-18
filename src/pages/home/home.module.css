@@ -48,3 +48,9 @@
     transform: translate(-50%, 0%);
   }
 }
+
+.links {
+  position: absolute;
+  bottom: 8%;
+  left: 5%;
+}

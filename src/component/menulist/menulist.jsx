@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "./menulist.module.css";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import styles from './menulist.module.css';
 
 const setDirection = (direction) => {
-  if (direction === "row") {
+  if (direction === 'row') {
     return styles.row;
   } else {
     return styles.column;
@@ -11,10 +11,9 @@ const setDirection = (direction) => {
 };
 
 const Menulist = ({ isClicked, direction }) => {
-  console.log(direction);
   return (
     <div className={styles.wrapper}>
-      {direction === "column" && (
+      {direction === 'column' && (
         <div
           className={`${styles.bar} ${
             isClicked ? styles.active : styles.inactive
@@ -27,21 +26,21 @@ const Menulist = ({ isClicked, direction }) => {
             isClicked ? styles.firstRowIn : styles.firstRowOut
           }`}
         >
-          <Link to={"/"}>Home</Link>
+          <Link to={'/'}>Home</Link>
         </li>
         <li
           className={`${styles.item}  ${
             isClicked ? styles.secondRowIn : styles.secondRowOut
           }`}
         >
-          <Link to={"/videos"}>Videos</Link>
+          <Link to={'/videos'}>Videos</Link>
         </li>
         <li
           className={`${styles.item}  ${
             isClicked ? styles.thirdRowIn : styles.thirdRowOut
           }`}
         >
-          <Link to={"/photos"}>Photos</Link>
+          <Link to={'/photos'}>Photos</Link>
         </li>
       </ul>
     </div>
