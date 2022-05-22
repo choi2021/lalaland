@@ -13,8 +13,9 @@
 }
 
 .menuAndTodo {
+  height: 50%;
   width: 100%;
-  padding: 0 1em;
+  padding: 2em 1em;
   display: flex;
   justify-content: space-between;
 }
@@ -36,7 +37,7 @@
   border-radius: 0.4em;
   position: absolute;
   left: 49%;
-  top: 3rem;
+  top: 5%;
   animation: GoingDown ease 3000ms forwards;
 }
 
@@ -51,6 +52,46 @@
 
 .links {
   position: absolute;
-  bottom: 8%;
+  bottom: 5%;
   left: 5%;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .title {
+    font-size: 4rem;
+  }
+
+  .menuAndTodo {
+    height: 50%;
+    padding: 2em 1em;
+    margin-top: 2em;
+  }
+
+  .popup {
+    font-size: 1.1rem;
+    top: 6%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .menuAndTodo {
+    height: 50%;
+    padding: 2em 1em;
+    margin-top: 1.5em;
+  }
+
+  .popup {
+    font-size: 1rem;
+    top: 7%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    width: 100%;
+  }
 }

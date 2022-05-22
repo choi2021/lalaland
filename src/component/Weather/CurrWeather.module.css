@@ -1,7 +1,7 @@
 @value borderRadius,border from "../../common/size.css";
 
 .container {
-  padding: 0.2em 1em;
+  padding: 0.25em 0.5em;
   border: border;
   border-radius: borderRadius;
   display: flex;
@@ -11,7 +11,7 @@
 
 .city {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .tempAndIcon {
@@ -21,10 +21,20 @@
 }
 
 .temp {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .icon {
-  width: 2.3rem;
-  height: 2.3rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    font-size: 0.7rem;
+    flex-direction: row;
+  }
+  .city {
+    margin-right: 0.5em;
+  }
 }

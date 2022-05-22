@@ -13,9 +13,8 @@
 
 .input {
   margin: 0 0.2em;
-  padding: 0.5em 0.5em;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
   outline: none;
   background-color: transparent;
   border: border;
@@ -40,8 +39,8 @@
   cursor: pointer;
   transform: rotate(90deg);
   transition: all ease 300ms;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .btn.active,
@@ -49,4 +48,24 @@
   transform: none;
   color: colorBlue;
   background-color: colorWhite;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .input {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    margin: 0 auto;
+    width: 85%;
+  }
+  .input {
+    font-size: 0.7rem;
+  }
 }

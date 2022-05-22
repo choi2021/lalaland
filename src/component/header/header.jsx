@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import Music from '../music/music';
 import Timer from '../timer/timer';
 import CurrWeather from '../Weather/CurrWeather';
@@ -12,23 +13,18 @@ const Header = ({
   shuffleMusics,
   weatherService,
 }) => {
+  const isDesktop = useMediaQuery({ minWidth: 1100 });
+  const isMobile = useMediaQuery({ maxWidth: 800 });
   return (
     <header className={styles.header}>
       <div className={styles.leftBox}>
         <Timer></Timer>
-        {location === 'home' && (
-          <Music
-            selected={selected}
-            setNextSong={setNextSong}
-            setPrevSong={setPrevSong}
-            setRandomSong={shuffleMusics}
-          ></Music>
-        )}
+        {!isDesktop && <CurrWeather weatherService={weatherService} />}
       </div>
 
       {location === 'home' && (
         <div className={styles.rightBox}>
-          {location === 'home' && (
+          {!isMobile && (
             <Music
               selected={selected}
               setNextSong={setNextSong}
@@ -36,7 +32,9 @@ const Header = ({
               setRandomSong={shuffleMusics}
             ></Music>
           )}
-          <CurrWeather weatherService={weatherService}></CurrWeather>
+          {isDesktop && (
+            <CurrWeather weatherService={weatherService}></CurrWeather>
+          )}
         </div>
       )}
     </header>

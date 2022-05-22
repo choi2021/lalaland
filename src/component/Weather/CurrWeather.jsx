@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
-import styles from "./CurrWeather.module.css";
+import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import styles from './CurrWeather.module.css';
 
 const CurrWeather = ({ weatherService }) => {
+  const isMobile = useMediaQuery({ maxWidth: 800 });
   const [weatherInfo, setWeatherInfo] = useState({});
-  const [icon, setIcon] = useState("");
-  const [temp, setTemp] = useState("?");
+  const [icon, setIcon] = useState('');
+  const [temp, setTemp] = useState('?');
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -16,7 +18,7 @@ const CurrWeather = ({ weatherService }) => {
           .then((info) => setWeatherInfo(info));
       },
       () => {
-        console.log("위치를 알 수 없습니다.");
+        console.log('위치를 알 수 없습니다.');
       }
     );
   }, []);
@@ -41,7 +43,7 @@ const CurrWeather = ({ weatherService }) => {
         <img
           className={styles.icon}
           src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
-          alt="icon"
+          alt='icon'
         />
       </p>
     </section>

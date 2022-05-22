@@ -6,6 +6,8 @@ import playlist from '../../playlist.json';
 import '../../font/font.css';
 import Header from '../../component/header/header';
 import Links from '../../component/links/links';
+import { useMediaQuery } from 'react-responsive';
+import Music from '../../component/music/music';
 
 function Home({ weatherService, todoDB, userObj }) {
   const [pendingTodos, setPendingTodos] = useState([]);
@@ -109,6 +111,7 @@ function Home({ weatherService, todoDB, userObj }) {
     }
   };
 
+  const isSmall = useMediaQuery({ maxWidth: 800 });
   return (
     <div className={styles.home}>
       <Header
@@ -131,8 +134,10 @@ function Home({ weatherService, todoDB, userObj }) {
           ></TodoContainer>
         </div>
       </div>
-      <span className={styles.title}>LaLa Land</span>
-      {onLogin && <span className={styles.popup}>Welcome {userObj.id}</span>}
+      {!isSmall && <span className={styles.title}>LaLa Land</span>}
+      {onLogin && !isSmall && (
+        <span className={styles.popup}>Welcome {userObj.id}</span>
+      )}
       <div className={styles.links}>
         <Links />
       </div>
