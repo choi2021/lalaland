@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import Header from "../../component/header/header";
-import Sidebar from "../../component/sidebar/sidebar";
-import styles from "./photos.module.css";
-import photos from "../../photos.json";
-import Slider from "../../component/slider/slider";
+import React, { useEffect, useState } from 'react';
+import Header from '../../component/header/header';
+import Sidebar from '../../component/sidebar/sidebar';
+import styles from './photos.module.css';
+import photos from '../../photos.json';
+import Slider from '../../component/slider/slider';
+import Timer from '../../component/timer/timer';
 
-const Photos = ({ weatherService }) => {
+const Photos = () => {
   const [scenePhotos, setScenePhotos] = useState([]);
   const [illustPhotos, setillustPhotos] = useState([]);
 
@@ -18,12 +19,9 @@ const Photos = ({ weatherService }) => {
     <section className={styles.container}>
       <div className={styles.bg}></div>
       <header className={styles.header}>
-        <Header weatherService={weatherService} location=""></Header>
+        <Sidebar direction={'row'}></Sidebar>
       </header>
       <main className={styles.main}>
-        <div className={styles.menu}>
-          <Sidebar direction={"column"}></Sidebar>
-        </div>
         <div className={styles.sliders}>
           <Slider photoArr={scenePhotos && scenePhotos} slow></Slider>
           <Slider photoArr={illustPhotos && illustPhotos}></Slider>

@@ -1,14 +1,18 @@
 @value colorWhite,colorBlack from "../../common/color.css";
+:root {
+  --videoSize: 6rem;
+}
 
 .wrapper {
-  width: 35%;
-  padding: 1em 2em;
+  width: calc(var(--videoSize) * 4);
+  height: calc(var(--videoSize) * 3);
+  padding: 0.5em 1em;
 }
 
 .video {
-  position: relative;
+  height: 100%;
   width: 100%;
-  height: 18rem;
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -37,4 +41,15 @@
 
 .video:hover .metadata {
   display: flex;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1100px) {
+  :root {
+    --videoSize: 5.2rem;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 900px) {
+  :root {
+    --videoSize: 4.5rem;
+  }
 }

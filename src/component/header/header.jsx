@@ -19,7 +19,9 @@ const Header = ({
     <header className={styles.header}>
       <div className={styles.leftBox}>
         <Timer></Timer>
-        {!isDesktop && <CurrWeather weatherService={weatherService} />}
+        {!isDesktop && location === 'home' && (
+          <CurrWeather weatherService={weatherService} />
+        )}
       </div>
 
       {location === 'home' && (

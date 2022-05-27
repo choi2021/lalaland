@@ -39,6 +39,10 @@ a {
   cursor: pointer;
 }
 
+.list.row .item {
+  padding: 0.5em 1em;
+}
+
 .item:hover,
 .item:hover a {
   background-color: colorWhite;
@@ -99,5 +103,11 @@ a {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .list.row .item {
+    font-size: 1rem;
   }
 }
