@@ -21,11 +21,11 @@
 }
 
 .container {
+  height: 100vh;
   color: colorWhite;
 }
 
 .main {
-  padding-left: 1em;
   display: flex;
   overflow: hidden;
 }
@@ -35,5 +35,4 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-left: 1em;
 }

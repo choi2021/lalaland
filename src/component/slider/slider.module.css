@@ -1,13 +1,17 @@
 @value colorBlue,colorWhite,colorBlack from "../../common/color.css";
+:root {
+  --img-size: 5rem;
+}
 
 .container {
-  width: 100%;
+  list-style: none;
   display: flex;
-  animation: SlideLeft ease-in 90s infinite;
+  animation: SlideLeft ease-in 70s infinite;
+  margin-bottom: 2em;
 }
 
 .container.delayed {
-  animation: SlideLeft ease-in 105s infinite;
+  animation: SlideLeft ease-in 75s infinite;
 }
 
 .container:hover,
@@ -20,33 +24,49 @@
   border-radius: 1em;
   margin-right: 0.5em;
   width: 100%;
-  height: 250px;
+  height: calc(var(--img-size) * 3);
 }
 
 .img {
   border-radius: 1em;
-  width: 370px;
+  width: calc(var(--img-size) * 4);
   height: 100%;
 }
 
 @keyframes SlideLeft {
   0% {
-    transform: translateX(200px);
+    transform: translateX(95vw);
   }
 
-  49.9% {
+  90% {
     opacity: 1;
   }
-  70% {
+  90.1% {
     transform: translateX(-500vw);
     opacity: 0;
   }
-  70.1% {
+  90.2% {
+    transform: translateX(-500vw);
+    opacity: 1;
+  }
+  90.3% {
     transform: translateX(100vw);
     opacity: 1;
   }
   100% {
-    transform: translateX(200px);
+    transform: translateX(95vw);
     opacity: 1;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  :root {
+    --img-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --img-size: 3.5rem;
   }
 }
