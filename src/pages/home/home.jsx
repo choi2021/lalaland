@@ -7,7 +7,6 @@ import '../../font/font.css';
 import Header from '../../component/header/header';
 import Links from '../../component/links/links';
 import { useMediaQuery } from 'react-responsive';
-import Music from '../../component/music/music';
 
 function Home({ weatherService, todoDB, userObj }) {
   const [pendingTodos, setPendingTodos] = useState([]);

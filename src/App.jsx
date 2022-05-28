@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import Router from './Router';
 
 function App(props) {

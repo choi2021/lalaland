@@ -3,7 +3,6 @@ import { useMediaQuery } from 'react-responsive';
 import styles from './CurrWeather.module.css';
 
 const CurrWeather = ({ weatherService }) => {
-  const isMobile = useMediaQuery({ maxWidth: 800 });
   const [weatherInfo, setWeatherInfo] = useState({});
   const [icon, setIcon] = useState('');
   const [temp, setTemp] = useState('?');

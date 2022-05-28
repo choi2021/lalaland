@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../../component/header/header';
 import Sidebar from '../../component/sidebar/sidebar';
 import styles from './photos.module.css';
 import photos from '../../photos.json';
 import Slider from '../../component/slider/slider';
-import Timer from '../../component/timer/timer';
 
 const Photos = () => {
   const [scenePhotos, setScenePhotos] = useState([]);
