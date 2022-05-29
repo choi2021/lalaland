@@ -53,3 +53,9 @@
     --videoSize: 4.5rem;
   }
 }
+
+@media screen and (max-width: 800px) {
+  :root {
+    --videoSize: 4rem;
+  }
+}

@@ -43,3 +43,18 @@
   color: colorBlue;
   background-color: colorWhite;
 }
+
+@media screen and (max-width: 550px) {
+  .container {
+    margin-top: 0.3em;
+    width: 45%;
+  }
+  .title {
+    width: 80%;
+    padding: 0.25em;
+  }
+  .btn {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

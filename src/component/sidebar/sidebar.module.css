@@ -45,3 +45,38 @@
   margin: 0;
   font-size: 1.5rem;
 }
+
+@media screen and (min-width: 700px) and (max-width: 800px) {
+  .btn {
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 700px) {
+  .btn {
+    font-size: 1.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .btn {
+    font-size: 1.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+}

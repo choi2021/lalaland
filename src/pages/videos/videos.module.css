@@ -94,10 +94,20 @@
   color: colorWhite;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 600px) and (max-width: 800px) {
   .btn {
     font-size: 0.8rem;
     margin-right: 0.5em;
+  }
+  .timer {
+    flex-basis: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .btn {
+    font-size: 0.7rem;
+    margin-right: 0.4em;
   }
   .timer {
     flex-basis: 40%;

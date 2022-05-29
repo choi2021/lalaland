@@ -6,12 +6,12 @@
 .container {
   list-style: none;
   display: flex;
-  animation: SlideLeft ease-in 70s infinite;
+  animation: SlideLeft ease-in 55s infinite;
   margin-bottom: 2em;
 }
 
 .container.delayed {
-  animation: SlideLeft ease-in 75s infinite;
+  animation: SlideLeft ease-in 65s infinite;
 }
 
 .container:hover,

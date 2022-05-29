@@ -6,7 +6,7 @@ const Login = ({ auth, onLogin }) => {
   const navigate = useNavigate();
   useEffect(() => {
     onLogin && navigate('/home');
-  }, []);
+  }, [onLogin, navigate]);
   const handleClick = (event) => {
     const {
       currentTarget: { textContent },
