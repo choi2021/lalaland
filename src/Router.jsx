@@ -1,9 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login/login";
-import Home from "./pages/home/home";
-import Videos from "./pages/videos/videos";
-import Detail from "./component/detail/detail";
-import Photos from "./pages/photos/photos";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './pages/Login/login';
+import Home from './pages/home/home';
+import Videos from './pages/videos/videos';
+import Detail from './component/detail/detail';
+import Photos from './pages/photos/photos';
 
 function Router({
   weatherService,
@@ -14,14 +14,14 @@ function Router({
   setUserObj,
 }) {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route
-          path="/"
+          path='/'
           element={<Login auth={auth} setUserObj={setUserObj}></Login>}
         ></Route>
         <Route
-          path="/home"
+          path='/home'
           element={
             <Home
               weatherService={weatherService}
@@ -31,14 +31,14 @@ function Router({
           }
         />
         <Route
-          path="/videos"
+          path='/videos'
           element={
             <Videos youtube={youtube} weatherService={weatherService}></Videos>
           }
         />
-        <Route path="/videos/:id" element={<Detail></Detail>}></Route>
+        <Route path='/videos/:id' element={<Detail></Detail>}></Route>
         <Route
-          path="/photos"
+          path='/photos'
           element={<Photos weatherService={weatherService}></Photos>}
         ></Route>
       </Routes>

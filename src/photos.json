@@ -2,19 +2,19 @@
   "scene": [
     {
       "id": 1,
-      "address": "/img/scene/scene1.jpg"
+      "address": "../img/scene/scene1.jpg"
     },
     {
       "id": 2,
-      "address": "/img/scene/scene2.jpg"
+      "address": "../img/scene/scene2.jpg"
     },
     {
       "id": 3,
-      "address": "/img/scene/scene3.jpg"
+      "address": "../img/scene/scene3.jpg"
     },
     {
       "id": 4,
-      "address": "/img/scene/scene4.jpg"
+      "address": "../img/scene/scene4.jpg"
     },
     {
       "id": 5,

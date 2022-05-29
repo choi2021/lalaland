@@ -9,7 +9,7 @@ const Login = ({ auth, setUserObj }) => {
       setUserObj(userObj);
       navigate('/home');
     });
-  }, []);
+  }, [auth, navigate, setUserObj]);
 
   const handleClick = (event) => {
     const {

@@ -31,7 +31,7 @@ function Home({ weatherService, todoDB, userObj }) {
       setOnLogin(true);
       setTimeout(() => setOnLogin(false), 5000);
     }
-  }, []);
+  }, [userObj?.id]);
 
   const shuffleMusics = () => {
     const arr = Array.from(Array(musics.length), (_, k) => k);
