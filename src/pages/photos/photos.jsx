@@ -3,10 +3,15 @@ import Sidebar from '../../component/sidebar/sidebar';
 import styles from './photos.module.css';
 import photos from '../../photos.json';
 import Slider from '../../component/slider/slider';
+import { useNavigate } from 'react-router-dom';
 
-const Photos = () => {
+const Photos = ({ onLogin }) => {
   const [scenePhotos, setScenePhotos] = useState([]);
   const [illustPhotos, setillustPhotos] = useState([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    !onLogin && navigate('/');
+  }, []);
 
   useEffect(() => {
     setScenePhotos(photos.scene);

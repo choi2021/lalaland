@@ -5,29 +5,50 @@ import Videos from './pages/videos/videos';
 import Detail from './component/detail/detail';
 import Photos from './pages/photos/photos';
 
-function Router({ weatherService, todoDB, youtube, auth, user, setUserObj }) {
+function Router({
+  weatherService,
+  todoDB,
+  youtube,
+  auth,
+  user,
+  setUserObj,
+  onLogin,
+}) {
   return (
     <Routes>
       <Route
-        path='/login'
-        element={<Login auth={auth} setUserObj={setUserObj}></Login>}
-      ></Route>
-      <Route
         path='/'
         element={
-          <Home weatherService={weatherService} todoDB={todoDB} user={user} />
+          <Login auth={auth} setUserObj={setUserObj} onLogin={onLogin}></Login>
+        }
+      ></Route>
+      <Route
+        path='/home'
+        element={
+          <Home
+            weatherService={weatherService}
+            todoDB={todoDB}
+            user={user}
+            onLogin={onLogin}
+          />
         }
       />
       <Route
         path='/videos'
         element={
-          <Videos youtube={youtube} weatherService={weatherService}></Videos>
+          <Videos
+            youtube={youtube}
+            weatherService={weatherService}
+            onLogin={onLogin}
+          ></Videos>
         }
       />
       <Route path='/videos/:id' element={<Detail></Detail>}></Route>
       <Route
         path='/photos'
-        element={<Photos weatherService={weatherService}></Photos>}
+        element={
+          <Photos weatherService={weatherService} onLogin={onLogin}></Photos>
+        }
       ></Route>
     </Routes>
   );

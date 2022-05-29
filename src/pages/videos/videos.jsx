@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../component/header/header';
 import Sidebar from '../../component/sidebar/sidebar';
 import Video from '../../component/video/video';
 import styles from './videos.module.css';
 
-const Videos = ({ youtube, weatherService }) => {
+const Videos = ({ youtube, weatherService, onLogin }) => {
   const defaultRef = useRef();
   const ostRef = useRef();
   const makingRef = useRef();
@@ -12,6 +13,10 @@ const Videos = ({ youtube, weatherService }) => {
   const [topic, setTopic] = useState('lalaland ');
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
+  useEffect(() => {
+    !onLogin && navigate('/');
+  }, []);
   useEffect(() => {
     youtube.search(topic).then((items) => {
       setVideos(items);

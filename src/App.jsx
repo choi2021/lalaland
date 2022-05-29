@@ -4,19 +4,28 @@ import Router from './Router';
 
 function App(props) {
   const [userObj, setUserObj] = useState(null);
+  const [login, setLogin] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     props.auth.observeChange((user) => {
       if (user) {
         setUserObj(user);
-        navigate('/');
+        setLogin(true);
       } else {
-        navigate('/login');
+        navigate('/');
+        setLogin(false);
       }
     });
   }, [props.auth, navigate]);
 
-  return <Router user={userObj} setUser={setUserObj} {...props}></Router>;
+  return (
+    <Router
+      user={userObj}
+      setUser={setUserObj}
+      onLogin={login}
+      {...props}
+    ></Router>
+  );
 }
 
 export default App;

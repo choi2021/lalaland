@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './login.module.css';
 
-const Login = ({ auth }) => {
+const Login = ({ auth, onLogin }) => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    onLogin && navigate('/home');
+  }, []);
   const handleClick = (event) => {
     const {
       currentTarget: { textContent },
