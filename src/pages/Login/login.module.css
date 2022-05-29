@@ -14,15 +14,15 @@
 
 .title {
   font-family: Yasashii;
-  font-size: 4.5rem;
+  font-size: 3.6rem;
 }
 
 .logo {
-  font-size: 5.5rem;
+  font-size: 4.5rem;
 }
 
 .btns {
-  width: 50%;
+  width: 60%;
   padding: 1em 2em;
   display: flex;
   flex-direction: column;
@@ -43,4 +43,29 @@
 
 .btn:hover {
   background-color: colorLightYellow;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .title {
+    font-family: Yasashii;
+    font-size: 3rem;
+  }
+
+  .logo {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .container {
+    background: url('../../../public/img/login.jpg') right/cover;
+  }
+  .title {
+    font-family: Yasashii;
+    font-size: 2.5rem;
+  }
+
+  .logo {
+    font-size: 3.5rem;
+    display: block;
+  }
 }

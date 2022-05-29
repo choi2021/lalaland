@@ -7,18 +7,26 @@ const CurrWeather = ({ weatherService }) => {
   const [temp, setTemp] = useState('?');
 
   useEffect(() => {
+    let isMounted = true;
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-        weatherService
-          .getWeather(lat, lon)
-          .then((info) => setWeatherInfo(info));
+        if (isMounted) {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          weatherService
+            .getWeather(lat, lon)
+            .then((info) => setWeatherInfo(info));
+        }
       },
+
       () => {
         console.log('위치를 알 수 없습니다.');
       }
     );
+
+    return () => {
+      isMounted = false;
+    };
   }, [weatherService]);
 
   useEffect(() => {

@@ -5,8 +5,8 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
-} from "firebase/auth";
-import firebaseApp from "../firebase/firebase";
+} from 'firebase/auth';
+import firebaseApp from '../firebase/firebase';
 
 class Auth {
   constructor() {
@@ -16,14 +16,12 @@ class Auth {
     this.facebookAuth = new FacebookAuthProvider();
   }
 
-  login(provider) {
+  async login(provider) {
     return fetch(signInWithPopup(this.auth, this[`${provider}Auth`]));
   }
 
-  observeChange(fn) {
-    return onAuthStateChanged(this.auth, (user) => {
-      user && fn({ uid: user.uid, id: user.displayName });
-    });
+  async observeChange(fn) {
+    return onAuthStateChanged(this.auth, fn);
   }
 }
 

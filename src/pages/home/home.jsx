@@ -8,7 +8,7 @@ import Header from '../../component/header/header';
 import Links from '../../component/links/links';
 import { useMediaQuery } from 'react-responsive';
 
-function Home({ weatherService, todoDB, userObj }) {
+function Home({ weatherService, todoDB, user }) {
   const [pendingTodos, setPendingTodos] = useState([]);
   const [finishedTodos, setFinishedTodos] = useState([]);
   const [musics, setMusics] = useState([]);
@@ -28,11 +28,11 @@ function Home({ weatherService, todoDB, userObj }) {
   }, []);
 
   useEffect(() => {
-    if (userObj.id) {
+    if (user) {
       setOnLogin(true);
       setTimeout(() => setOnLogin(false), 5000);
     }
-  }, [userObj?.id]);
+  }, [user]);
 
   const shuffleMusics = () => {
     const arr = Array.from(Array(musics.length), (_, k) => k);
@@ -75,21 +75,26 @@ function Home({ weatherService, todoDB, userObj }) {
             setFinishedTodos(Object.values(todos));
           }
         },
-        userObj.uid
+        user?.uid
       );
     },
-    [todoDB, userObj.uid]
+    [todoDB, user]
   );
 
-  const deleteTodo = useCallback((todo, type) => {
-    if (type === 'pending') {
-      setPendingTodos((todos) => todos.filter((item) => item.id !== todo.id));
-      todoDB.deleteTodo(todo, type, userObj.uid);
-    } else {
-      setFinishedTodos((todos) => todos.filter((item) => item.id !== todo.id));
-      todoDB.deleteTodo(todo, type, userObj.uid);
-    }
-  }, []);
+  const deleteTodo = useCallback(
+    (todo, type) => {
+      if (type === 'pending') {
+        setPendingTodos((todos) => todos.filter((item) => item.id !== todo.id));
+        todoDB.deleteTodo(todo, type, user.uid);
+      } else {
+        setFinishedTodos((todos) =>
+          todos.filter((item) => item.id !== todo.id)
+        );
+        todoDB.deleteTodo(todo, type, user.uid);
+      }
+    },
+    [todoDB, user.uid]
+  );
 
   const addTodo = (value) => {
     const obj = {
@@ -97,27 +102,39 @@ function Home({ weatherService, todoDB, userObj }) {
       text: value,
     };
     setPendingTodos((todos) => [...todos, { ...obj }]);
-    todoDB.setTodo(obj, 'pending', userObj.uid);
+    todoDB.setTodo(obj, 'pending', user.uid);
   };
 
-  const moveTodo = useCallback((todo, start) => {
-    if (start === 'pending') {
-      setPendingTodos((todos) => todos.filter((item) => item.id !== todo.id));
-      setFinishedTodos((todos) => [...todos, { ...todo }]);
-      todoDB.deleteTodo(todo, 'pending', userObj.uid);
-      todoDB.setTodo(todo, 'finished', userObj.uid);
-    } else {
-      setFinishedTodos((todos) => todos.filter((item) => item.id !== todo.id));
-      setPendingTodos((todos) => [...todos, { ...todo }]);
-      todoDB.deleteTodo(todo, 'finished', userObj.uid);
-      todoDB.setTodo(todo, 'pending', userObj.uid);
-    }
-  }, []);
+  const moveTodo = useCallback(
+    (todo, start) => {
+      if (start === 'pending') {
+        setPendingTodos((todos) => todos.filter((item) => item.id !== todo.id));
+        setFinishedTodos((todos) => [...todos, { ...todo }]);
+        todoDB.deleteTodo(todo, 'pending', user.uid);
+        todoDB.setTodo(todo, 'finished', user.uid);
+      } else {
+        setFinishedTodos((todos) =>
+          todos.filter((item) => item.id !== todo.id)
+        );
+        setPendingTodos((todos) => [...todos, { ...todo }]);
+        todoDB.deleteTodo(todo, 'finished', user.uid);
+        todoDB.setTodo(todo, 'pending', user.uid);
+      }
+    },
+    [todoDB, user.uid]
+  );
 
   useEffect(() => {
-    getTodo('pending');
-    getTodo('finished');
+    let isRead = true;
+    if (isRead) {
+      getTodo('pending');
+      getTodo('finished');
+    }
+
+    return () => (isRead = false);
   }, [getTodo]);
+
+  const signOut = () => {};
 
   const isSmall = useMediaQuery({ maxWidth: 800 });
   return (
@@ -144,11 +161,12 @@ function Home({ weatherService, todoDB, userObj }) {
       </div>
       {!isSmall && <span className={styles.title}>LaLa Land</span>}
       {onLogin && !isSmall && (
-        <span className={styles.popup}>Welcome {userObj.id}</span>
+        <span className={styles.popup}>Welcome {user?.displayName}</span>
       )}
       <div className={styles.links}>
         <Links />
       </div>
+      <button onClick={signOut}></button>
     </div>
   );
 }

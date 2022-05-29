@@ -1,16 +1,7 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import styles from './login.module.css';
 
-const Login = ({ auth, setUserObj }) => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    auth.observeChange((userObj) => {
-      setUserObj(userObj);
-      navigate('/home');
-    });
-  }, [auth, navigate, setUserObj]);
-
+const Login = ({ auth }) => {
   const handleClick = (event) => {
     const {
       currentTarget: { textContent },
@@ -19,9 +10,9 @@ const Login = ({ auth, setUserObj }) => {
   };
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>
+      <h2 className={styles.title}>
         Welcome to your <span className={styles.logo}>LaLa land</span>
-      </h1>
+      </h2>
       <div className={styles.btns}>
         <button className={styles.btn} onClick={handleClick}>
           Github
