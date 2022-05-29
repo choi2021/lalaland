@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/lalaland/static/css/main.73b745a1.css",
-    "main.js": "/lalaland/static/js/main.0b09c449.js",
+    "main.js": "/lalaland/static/js/main.bdbc1f4e.js",
     "static/media/bg.jpg": "/lalaland/static/media/bg.78248077b5006dbc8614.jpg",
     "static/media/YasashiiBold.otf": "/lalaland/static/media/YasashiiBold.adc79dd39f2624598fe7.otf",
     "static/media/login.jpg": "/lalaland/static/media/login.60a0a8dc43d7498bd1b6.jpg",
     "static/media/YasashiiBold.ttf": "/lalaland/static/media/YasashiiBold.4499c1e08893e9219f98.ttf",
     "index.html": "/lalaland/index.html",
     "main.73b745a1.css.map": "/lalaland/static/css/main.73b745a1.css.map",
-    "main.0b09c449.js.map": "/lalaland/static/js/main.0b09c449.js.map"
+    "main.bdbc1f4e.js.map": "/lalaland/static/js/main.bdbc1f4e.js.map"
   },
   "entrypoints": [
     "static/css/main.73b745a1.css",
-    "static/js/main.0b09c449.js"
+    "static/js/main.bdbc1f4e.js"
   ]
 }
