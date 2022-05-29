@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./video.module.css";
+import React, { memo } from 'react';
+import { Link } from 'react-router-dom';
+import styles from './video.module.css';
 
-const Video = ({ id, title, imgInfo }) => {
+const Video = memo(({ id, title, imgInfo }) => {
   return (
     <Link to={`/videos/${id}`} className={styles.wrapper}>
       <li className={styles.video}>
-        <img className={styles.img} src={imgInfo.medium.url} alt="thumbnails" />
+        <img className={styles.img} src={imgInfo.medium.url} alt='thumbnails' />
         <div className={styles.metadata}>
           <h1 className={styles.title}>
             {title.length > 39 ? `${title.slice(0, 39)}...` : title}
@@ -15,6 +15,6 @@ const Video = ({ id, title, imgInfo }) => {
       </li>
     </Link>
   );
-};
+});
 
 export default Video;

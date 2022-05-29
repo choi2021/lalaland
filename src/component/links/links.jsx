@@ -8,6 +8,7 @@ export default function Links() {
       <a
         href='https://twitter.com/lalaland'
         target='_blank'
+        rel='noreferrer'
         className={styles.address}
       >
         <FaTwitter />
@@ -15,6 +16,7 @@ export default function Links() {
       <a
         href='https://www.facebook.com/LaLaLand/'
         target='_blank'
+        rel='noreferrer'
         className={styles.address}
       >
         <FaFacebookSquare />
@@ -22,6 +24,7 @@ export default function Links() {
       <a
         href='https://www.instagram.com/lalaland/'
         target='_blank'
+        rel='noreferrer'
         className={styles.address}
       >
         <FaInstagram />

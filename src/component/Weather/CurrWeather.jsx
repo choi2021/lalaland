@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import styles from './CurrWeather.module.css';
 
 const CurrWeather = ({ weatherService }) => {
@@ -20,7 +19,7 @@ const CurrWeather = ({ weatherService }) => {
         console.log('위치를 알 수 없습니다.');
       }
     );
-  }, []);
+  }, [weatherService]);
 
   useEffect(() => {
     if (weatherInfo.weather) {

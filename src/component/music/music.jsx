@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./music.module.css";
+import React, { useEffect, useRef, useState } from 'react';
+import styles from './music.module.css';
 import {
   FaRedoAlt,
   FaStepBackward,
@@ -7,7 +7,7 @@ import {
   FaStop,
   FaPlay,
   FaRandom,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
 const Music = ({ selected, setNextSong, setPrevSong, setRandomSong }) => {
   const [isPlaying, setisPlaying] = useState(false);
@@ -19,15 +19,15 @@ const Music = ({ selected, setNextSong, setPrevSong, setRandomSong }) => {
     if (isPlaying) {
       audioRef.current.play();
     }
-  }, [selected]);
+  }, [selected, isPlaying]);
 
   useEffect(() => {
-    audioRef.current.addEventListener("ended", () => {
+    audioRef.current.addEventListener('ended', () => {
       if (!onReplay) {
         setNextSong();
       }
     });
-  }, [audioRef, onReplay]);
+  }, [audioRef, onReplay, setNextSong]);
 
   const handlePlaying = () => {
     setisPlaying(!isPlaying);

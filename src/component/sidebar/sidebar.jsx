@@ -33,4 +33,4 @@ const Sidebar = ({ direction }) => {
   );
 };
 
-export default Sidebar;
+export default React.memo(Sidebar);

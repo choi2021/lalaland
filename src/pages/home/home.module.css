@@ -9,7 +9,7 @@
   background-color: colorBlue;
   height: 100vh;
   color: colorWhite;
-  background: url('/public/img/bg.jpg') center/cover;
+  background: url('../../../public/img/bg.jpg') center/cover;
 }
 
 .menuAndTodo {

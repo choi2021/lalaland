@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './menulist.module.css';
 
@@ -10,7 +10,7 @@ const setDirection = (direction) => {
   }
 };
 
-const Menulist = ({ isClicked, direction }) => {
+const Menulist = memo(({ isClicked, direction }) => {
   return (
     <div className={styles.wrapper}>
       {direction === 'column' && (
@@ -45,6 +45,6 @@ const Menulist = ({ isClicked, direction }) => {
       </ul>
     </div>
   );
-};
+});
 
 export default Menulist;

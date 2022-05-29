@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: url('/public/img/login.jpg') center/cover;
+  background: url('../../../public/img/login.jpg') center/cover;
   color: colorBlack;
 }
 

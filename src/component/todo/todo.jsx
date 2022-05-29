@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import {
   FaThumbsUp,
   FaHandPointLeft,
   FaRegLaughSquint,
   FaRegTrashAlt,
-} from "react-icons/fa";
-import styles from "./todo.module.css";
+} from 'react-icons/fa';
+import styles from './todo.module.css';
 
 const Todo = ({ type, onDelete, onMove, todo }) => {
   const handleDelete = () => {
@@ -18,7 +18,7 @@ const Todo = ({ type, onDelete, onMove, todo }) => {
   return (
     <li className={styles.container}>
       <p className={styles.text}>{todo.text}</p>
-      {type === "pending" && (
+      {type === 'pending' && (
         <div className={styles.btns}>
           <button className={styles.btn} onClick={handleDelete}>
             <FaRegTrashAlt></FaRegTrashAlt>
@@ -28,7 +28,7 @@ const Todo = ({ type, onDelete, onMove, todo }) => {
           </button>
         </div>
       )}
-      {type === "finished" && (
+      {type === 'finished' && (
         <div className={styles.btns}>
           <button className={styles.btn} onClick={handleMove}>
             <FaHandPointLeft></FaHandPointLeft>
@@ -41,4 +41,4 @@ const Todo = ({ type, onDelete, onMove, todo }) => {
     </li>
   );
 };
-export default Todo;
+export default React.memo(Todo);

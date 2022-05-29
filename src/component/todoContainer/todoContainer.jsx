@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
-import TodoList from "../todoList/todoList";
-import { FaThumbsUp, FaListUl } from "react-icons/fa";
-import styles from "./todoContainer.module.css";
+import React, { useRef, useState } from 'react';
+import TodoList from '../todoList/todoList';
+import { FaThumbsUp, FaListUl } from 'react-icons/fa';
+import styles from './todoContainer.module.css';
 
 const TodoContainer = ({
   pendingTodos,
@@ -17,7 +17,7 @@ const TodoContainer = ({
   });
 
   const handleAdd = (event) => {
-    if (event.key !== "Enter") {
+    if (event.key !== 'Enter') {
       return;
     }
     onAdd(inputRef.current.value);
@@ -36,20 +36,20 @@ const TodoContainer = ({
       <div className={styles.header}>
         <button
           className={`${styles.btn} ${activateBtn(onBtn.pending)}`}
-          data-value="pending"
+          data-value='pending'
           onClick={onBtnClick}
         >
           <FaListUl></FaListUl>
         </button>
         <input
           className={styles.input}
-          type="text"
+          type='text'
           placeholder="Today's ToDo"
           onKeyDown={handleAdd}
           ref={inputRef}
         />
         <button
-          data-value="finished"
+          data-value='finished'
           className={`${styles.btn} ${activateBtn(onBtn.finished)}`}
           onClick={onBtnClick}
         >
@@ -57,7 +57,7 @@ const TodoContainer = ({
         </button>
       </div>
       <TodoList
-        type="pending"
+        type='pending'
         todos={pendingTodos}
         onDelete={onDelete}
         onAdd={onAdd}
@@ -65,7 +65,7 @@ const TodoContainer = ({
         onList={onBtn.pending}
       />
       <TodoList
-        type="finished"
+        type='finished'
         todos={finishedTodos}
         onDelete={onDelete}
         onAdd={onAdd}
@@ -84,4 +84,4 @@ function activateBtn(onBtn) {
   }
 }
 
-export default TodoContainer;
+export default React.memo(TodoContainer);

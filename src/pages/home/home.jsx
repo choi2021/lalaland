@@ -1,5 +1,5 @@
 import styles from './home.module.css';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import TodoContainer from '../../component/todoContainer/todoContainer';
 import Sidebar from '../../component/sidebar/sidebar';
 import playlist from '../../playlist.json';
@@ -17,13 +17,14 @@ function Home({ weatherService, todoDB, userObj }) {
   const [onLogin, setOnLogin] = useState(false);
 
   useEffect(() => {
-    getTodo('pending');
-    getTodo('finished');
-  }, []);
-
-  useEffect(() => {
-    setMusics(playlist.musics);
-    setSelectedMusic(playlist.musics[0]);
+    const musicList = playlist.musics.map((item) => {
+      return {
+        ...item,
+        address: `${process.env.PUBLIC_URL}/music${item.address}`,
+      };
+    });
+    setMusics(musicList);
+    setSelectedMusic(musicList[0]);
   }, []);
 
   useEffect(() => {
@@ -63,21 +64,24 @@ function Home({ weatherService, todoDB, userObj }) {
     setSelectedMusic(musics[trackIndex]);
   };
 
-  const getTodo = (type) => {
-    todoDB.getTodo(
-      type,
-      (todos) => {
-        if (type === 'pending') {
-          setPendingTodos(Object.values(todos));
-        } else {
-          setFinishedTodos(Object.values(todos));
-        }
-      },
-      userObj.uid
-    );
-  };
+  const getTodo = useCallback(
+    (type) => {
+      todoDB.getTodo(
+        type,
+        (todos) => {
+          if (type === 'pending') {
+            setPendingTodos(Object.values(todos));
+          } else {
+            setFinishedTodos(Object.values(todos));
+          }
+        },
+        userObj.uid
+      );
+    },
+    [todoDB, userObj.uid]
+  );
 
-  const deleteTodo = (todo, type) => {
+  const deleteTodo = useCallback((todo, type) => {
     if (type === 'pending') {
       setPendingTodos((todos) => todos.filter((item) => item.id !== todo.id));
       todoDB.deleteTodo(todo, type, userObj.uid);
@@ -85,7 +89,7 @@ function Home({ weatherService, todoDB, userObj }) {
       setFinishedTodos((todos) => todos.filter((item) => item.id !== todo.id));
       todoDB.deleteTodo(todo, type, userObj.uid);
     }
-  };
+  }, []);
 
   const addTodo = (value) => {
     const obj = {
@@ -96,7 +100,7 @@ function Home({ weatherService, todoDB, userObj }) {
     todoDB.setTodo(obj, 'pending', userObj.uid);
   };
 
-  const moveTodo = (todo, start) => {
+  const moveTodo = useCallback((todo, start) => {
     if (start === 'pending') {
       setPendingTodos((todos) => todos.filter((item) => item.id !== todo.id));
       setFinishedTodos((todos) => [...todos, { ...todo }]);
@@ -108,7 +112,12 @@ function Home({ weatherService, todoDB, userObj }) {
       todoDB.deleteTodo(todo, 'finished', userObj.uid);
       todoDB.setTodo(todo, 'pending', userObj.uid);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    getTodo('pending');
+    getTodo('finished');
+  }, [getTodo]);
 
   const isSmall = useMediaQuery({ maxWidth: 800 });
   return (

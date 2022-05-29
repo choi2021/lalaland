@@ -21,6 +21,7 @@ const Detail = () => {
         </header>
         <div className={styles.wrapper}>
           <iframe
+            title='youtube'
             className={styles.video}
             src={`https://www.youtube.com/embed/${id}`}
             allowFullScreen

@@ -1,6 +1,7 @@
 @value colorWhite from "../../common/color.css";
 
 .container {
+  margin-bottom: 0.7em;
   display: flex;
   justify-content: center;
   align-items: center;

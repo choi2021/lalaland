@@ -2,43 +2,43 @@
   "musics": [
     {
       "title": "City of Stars",
-      "address": "/music/city of stars.mp3"
+      "address": "/city of stars.mp3"
     },
     {
       "title": "A lovely night",
-      "address": "/music/a lovely night.mp3"
+      "address": "/a lovely night.mp3"
     },
     {
       "title": "Another Days of Sun",
-      "address": "/music/Another days of sun.mp3"
+      "address": "/Another days of sun.mp3"
     },
     {
       "title": "Audition",
-      "address": "/music/Audition.mp3"
+      "address": "/Audition.mp3"
     },
     {
       "title": "Herman's Habit",
-      "address": "/music/Herman's Habit.mp3"
+      "address": "/Herman's Habit.mp3"
     },
     {
       "title": "Mia  Sebastians Theme",
-      "address": "/music/Mia  Sebastians Theme  La La Land OST.mp3"
+      "address": "/Mia  Sebastians Theme  La La Land OST.mp3"
     },
     {
       "title": "Planetarium",
-      "address": "/music/planetarium.mp3"
+      "address": "/planetarium.mp3"
     },
     {
       "title": "Someone In The Crowd",
-      "address": "/music/Someone In The Crowd.mp3"
+      "address": "/Someone In The Crowd.mp3"
     },
     {
       "title": "Start a Fire",
-      "address": "/music/Start a Fire.mp3"
+      "address": "/Start a Fire.mp3"
     },
     {
       "title": "Summer Montage  Madeline",
-      "address": "/music/Summer Montage  Madeline.mp3"
+      "address": "/Summer Montage  Madeline.mp3"
     }
   ]
 }

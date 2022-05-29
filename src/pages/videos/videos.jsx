@@ -17,10 +17,10 @@ const Videos = ({ youtube, weatherService }) => {
       setVideos(items);
       setIsLoading(false);
     });
-  }, [topic]);
+  }, [topic, youtube]);
   const handleBtnClick = (event) => {
     const q = event.currentTarget.dataset.value;
-    setTopic('lalaland' + ' ' + q);
+    setTopic(`lalaland ${q}`);
   };
 
   return (

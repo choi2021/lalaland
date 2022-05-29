@@ -1,7 +1,7 @@
-import React from "react";
-import Todo from "../todo/todo";
-import styles from "./todoList.module.css";
-const TodoList = ({ type, todos, onDelete, onAdd, onMove, onList }) => {
+import React, { memo } from 'react';
+import Todo from '../todo/todo';
+import styles from './todoList.module.css';
+const TodoList = memo(({ type, todos, onDelete, onAdd, onMove, onList }) => {
   return (
     <div className={`${styles.container} ${activateList(onList)}`}>
       <h1 className={styles.title}>{type.toUpperCase()}</h1>
@@ -19,7 +19,7 @@ const TodoList = ({ type, todos, onDelete, onAdd, onMove, onList }) => {
       </ul>
     </div>
   );
-};
+});
 
 function activateList(onBtn) {
   if (!onBtn) {

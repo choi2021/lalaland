@@ -1,6 +1,7 @@
 @value colorWhite,colorBlue from "../../common/color.css";
 @value borderRadius,border from "../../common/size.css";
 .container {
+  width: 18rem;
   color: colorWhite;
   display: flex;
   flex-direction: column;
