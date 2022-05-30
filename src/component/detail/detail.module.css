@@ -1,6 +1,6 @@
 @value colorBlue,colorWhite,colorBlack from "../../common/color.css";
 :root {
-  --videoSize: 15rem;
+  --detailSize: 15rem;
 }
 
 .container {
@@ -31,10 +31,10 @@
 
 .wrapper {
   background-color: colorBlack;
+  padding-top: 3em;
   text-align: center;
-  padding-top: 5.2rem;
-  width: calc(var(--videoSize) * 4);
-  height: calc(var(--videoSize) * 3);
+  width: calc(var(--detailSize) * 4);
+  height: calc(var(--detailSize) * 3);
   margin: 0 auto;
 }
 
@@ -56,27 +56,41 @@
 
 @media screen and (min-width: 900px) and (max-width: 1100px) {
   :root {
-    --videoSize: 13rem;
+    --detailSize: 13rem;
   }
 }
 @media screen and (min-width: 800px) and (max-width: 900px) {
   :root {
-    --videoSize: 12rem;
+    --detailSize: 12rem;
+  }
+
+  .wrapper {
+    padding-top: 1em;
   }
 }
 @media screen and (min-width: 700px) and (max-width: 800px) {
   :root {
-    --videoSize: 11rem;
+    --detailSize: 11rem;
+  }
+
+  .wrapper {
+    padding-top: 0;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 700px) {
   :root {
-    --videoSize: 9rem;
+    --detailSize: 9rem;
+  }
+  .wrapper {
+    padding-top: 0;
   }
 }
 @media screen and (min-width: 500px) and (max-width: 600px) {
   :root {
-    --videoSize: 8rem;
+    --detailSize: 8rem;
+  }
+  .wrapper {
+    padding-top: 0;
   }
 }

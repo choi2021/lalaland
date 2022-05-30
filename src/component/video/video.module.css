@@ -1,6 +1,6 @@
 @value colorWhite,colorBlack from "../../common/color.css";
 :root {
-  --videoSize: 6rem;
+  --videoSize: 7rem;
 }
 
 .wrapper {
