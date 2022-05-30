@@ -49,9 +49,13 @@
     margin-top: 0.3em;
     width: 45%;
   }
+
   .title {
     width: 80%;
     padding: 0.25em;
+  }
+  .btns {
+    width: 50%;
   }
   .btn {
     width: 1.5rem;

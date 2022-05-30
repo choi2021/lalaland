@@ -58,4 +58,8 @@
   :root {
     --videoSize: 4rem;
   }
+
+  .wrapper {
+    flex-basis: 1;
+  }
 }

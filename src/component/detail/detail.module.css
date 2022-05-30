@@ -1,7 +1,14 @@
 @value colorBlue,colorWhite,colorBlack from "../../common/color.css";
+:root {
+  --videoSize: 15rem;
+}
+
 .container {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: colorWhite;
   background-color: colorBlack;
   overflow: hidden;
@@ -26,15 +33,16 @@
   background-color: colorBlack;
   text-align: center;
   padding-top: 5.2rem;
-  width: 100%;
-  height: 100%;
+  width: calc(var(--videoSize) * 4);
+  height: calc(var(--videoSize) * 3);
+  margin: 0 auto;
 }
 
 .video {
   padding: 1em;
   width: 100%;
   height: 100%;
-  max-width: 70rem;
+  max-width: 65rem;
   border: none;
 }
 
@@ -44,4 +52,31 @@
   border: none;
   font-size: 1.2rem;
   color: colorWhite;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1100px) {
+  :root {
+    --videoSize: 13rem;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 900px) {
+  :root {
+    --videoSize: 12rem;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 800px) {
+  :root {
+    --videoSize: 11rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 700px) {
+  :root {
+    --videoSize: 9rem;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 600px) {
+  :root {
+    --videoSize: 8rem;
+  }
 }
