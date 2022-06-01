@@ -70,15 +70,11 @@
 
 1. React
 
-자바스크립트로만 하다가 React를 이용해서 다시 만들어보면서 그때는 많은 코드가 필요했던 부분들이 react로 해결되는 것을 많이 느꼈습니다.<br>
-특히 계속 사용되는 여러 component들을 구분해놓아서 제가 구성을 바꾸어야할 때 많이 도움이 되었고, 특히 다양한 리액트와 관련된 기술, 라이브러리들의 편리성을 <br>
-많이 느꼈습니다
+자바스크립트로만 하다가 React를 이용해서 다시 만들어보면서 그때는 많은 코드가 필요했던 부분들이 react로 해결되는 것을 많이 느꼈습니다. 특히 계속 사용되는 여러 component들을 구분해놓아서 제가 구성을 바꾸어야할 때 많이 도움이 되었고, 특히 다양한 리액트와 관련된 기술, 라이브러리들의 편리성을 많이 느꼈습니다
 
 2. CSS 작업
 
-Styled Component와 framer motion을 react-master class를 들으면서 새롭게 배웠지만 이번에는 CSS module과 keyframe으로 작업을 진행했습니다.<br>
-css module로는 state에 따라 다른 style을 줘야하는 부분과 계속해서 class를 외워서 정해줘야 하는 부분이 많이 힘들었고 styled component의 편리성을 더 느낄 수 있었습니다.<br>
-반응형 작업은 리액트 라이브러리중 react-reponsive라는 패키지를 사용해서 했는데 사용자의 화면 사이즈에 따라 주는 값 덕분에 전 버전보다 수월하게 작업할 수 있었습니다.
+Styled Component와 framer motion을 react-master class를 들으면서 새롭게 배웠지만 이번에는 CSS module과 keyframe으로 작업을 진행했습니다. css module로는 state에 따라 다른 style을 줘야하는 부분과 계속해서 class를 외워서 정해줘야 하는 부분이 많이 힘들었고 styled component의 편리성을 더 느낄 수 있었습니다. 반응형 작업은 리액트 라이브러리중 react-reponsive라는 패키지를 사용해서 했는데 사용자의 화면 사이즈에 따라 주는 값 덕분에 전 버전보다 수월하게 작업할 수 있었습니다.
 
 3. 아쉬운 점
 
