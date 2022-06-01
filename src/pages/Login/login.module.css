@@ -1,4 +1,4 @@
-@value colorIvory,colorLightYellow,colorBlack from "../../common/color.css";
+@value colorWhite,colorBlue,colorBlack from "../../common/color.css";
 @value borderRadius,border from "../../common/size.css";
 
 .container {
@@ -22,7 +22,7 @@
 }
 
 .btns {
-  width: 60%;
+  width: 70%;
   padding: 1em 2em;
   display: flex;
   flex-direction: column;
@@ -45,27 +45,37 @@
   background-color: colorLightYellow;
 }
 
-@media screen and (min-width: 800px) and (max-width: 1000px) {
+@media screen and (min-width: 600px) and (max-width: 1000px) {
   .title {
     font-family: Yasashii;
     font-size: 3rem;
   }
 
   .logo {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    display: block;
+    text-align: center;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .container {
-    background: url('../../../public/img/login.jpg') right/cover;
+    background: url('../../../public/img/mobileBg.jpg') center/cover;
   }
+
   .title {
-    font-family: Yasashii;
-    font-size: 2.5rem;
+    color: colorWhite;
+    font-size: 2rem;
+  }
+
+  .btn {
+    background-color: rgba(102, 131, 217, 0.9);
+    color: colorWhite;
+    border: 2px solid colorWhite;
   }
 
   .logo {
     font-size: 3.5rem;
     display: block;
+    text-align: center;
   }
 }

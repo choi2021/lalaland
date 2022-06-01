@@ -104,7 +104,11 @@
 
 @media screen and (max-width: 550px) {
   .menuAndTodo {
-    padding: 2em 1em;
+    padding: 2em 0;
     justify-content: space-between;
+  }
+
+  .links {
+    left: 5%;
   }
 }
