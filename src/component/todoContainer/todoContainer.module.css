@@ -23,6 +23,10 @@
   color: colorWhite;
 }
 
+.input:focus::placeholder {
+  color: transparent;
+}
+
 .input::placeholder {
   color: colorWhite;
   background-color: transparent;

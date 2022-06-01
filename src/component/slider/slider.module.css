@@ -7,11 +7,13 @@
   list-style: none;
   display: flex;
   animation: SlideLeft ease-in 55s infinite;
+  animation-delay: 500ms;
   margin-bottom: 2em;
 }
 
 .container.delayed {
   animation: SlideLeft ease-in 65s infinite;
+  animation-delay: 500ms;
 }
 
 .container:hover,
@@ -35,7 +37,7 @@
 
 @keyframes SlideLeft {
   0% {
-    transform: translateX(95vw);
+    transform: translateX(50vw);
   }
 
   90% {
