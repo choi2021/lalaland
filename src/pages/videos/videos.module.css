@@ -104,12 +104,26 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 500px) and (max-width: 600px) {
   .btn {
     font-size: 0.7rem;
     margin-right: 0.4em;
   }
   .timer {
     flex-basis: 40%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .btn {
+    font-size: 0.65rem;
+    padding: 0.2em 0.5em;
+    margin-right: 0.4em;
+  }
+  .timer {
+    flex-basis: 40%;
+  }
+  .menu {
+    position: fixed;
+    left: 0;
   }
 }

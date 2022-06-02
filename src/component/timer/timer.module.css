@@ -13,10 +13,18 @@
 // const isTable = useMediaQuery({ minWidth: 700, maxWidth: 900 });
 // const isMobile = useMediaQuery({ maxWidth: 700 }); */
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 600px) and (max-width: 900px) {
   .timer {
     font-size: 2.5rem;
     padding: 0.2em 0.5em;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timer {
+    font-size: 2.2rem;
+    padding: 0.1em 0.2em;
     display: inline-block;
   }
 }
