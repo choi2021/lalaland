@@ -2,7 +2,6 @@ import styles from './home.module.css';
 import { useCallback, useEffect, useState } from 'react';
 import TodoContainer from '../../component/todoContainer/todoContainer';
 import Sidebar from '../../component/sidebar/sidebar';
-import playlist from '../../playlist.json';
 import '../../font/font.css';
 import Header from '../../component/header/header';
 import Links from '../../component/links/links';
@@ -13,22 +12,9 @@ import Music from '../../component/music/music';
 function Home({ weatherService, todoDB, user, onLogin }) {
   const [pendingTodos, setPendingTodos] = useState([]);
   const [finishedTodos, setFinishedTodos] = useState([]);
-  const [musics, setMusics] = useState([]);
-  const [selectedMusic, setSelectedMusic] = useState({});
-  const [trackIndex, setTrackIndex] = useState(0);
+
   const [onPopup, setOnPopup] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const musicList = playlist.musics.map((item) => {
-      return {
-        ...item,
-        address: `${process.env.PUBLIC_URL}/music${item.address}`,
-      };
-    });
-    setMusics(musicList);
-    setSelectedMusic(musicList[0]);
-  }, []);
 
   useEffect(() => {
     if (onLogin) {
@@ -38,36 +24,6 @@ function Home({ weatherService, todoDB, user, onLogin }) {
       navigate('/');
     }
   }, [user]);
-
-  const shuffleMusics = () => {
-    const arr = Array.from(Array(musics.length), (_, k) => k);
-    let newArray = [];
-    while (newArray.length < arr.length) {
-      let ranNum = parseInt(Math.random() * arr.length);
-      if (newArray.find((num) => num === ranNum)) {
-        continue;
-      }
-      newArray.push(ranNum);
-    }
-    setMusics((prev) => {
-      return newArray.map((item) => prev[item]);
-    });
-    setSelectedMusic(musics[0]);
-  };
-
-  const setNextSong = () => {
-    setTrackIndex((curr) => {
-      return curr + 1 >= musics.length ? 0 : curr + 1;
-    });
-    setSelectedMusic(musics[trackIndex]);
-  };
-
-  const setPrevSong = () => {
-    setTrackIndex((curr) => {
-      return curr - 1 < 0 ? musics.length - 1 : curr - 1;
-    });
-    setSelectedMusic(musics[trackIndex]);
-  };
 
   const getTodo = useCallback(
     (type) => {
@@ -143,25 +99,13 @@ function Home({ weatherService, todoDB, user, onLogin }) {
   const isMobile = useMediaQuery({ maxWidth: 550 });
   return (
     <div className={styles.home}>
-      <Header
-        selected={selectedMusic}
-        setNextSong={setNextSong}
-        setPrevSong={setPrevSong}
-        shuffleMusics={shuffleMusics}
-        weatherService={weatherService}
-        location='home'
-      ></Header>
+      <Header weatherService={weatherService} location='home'></Header>
       <div className={styles.menuAndTodo}>
         <div className={styles.menu}>
           <Sidebar direction={'column'}></Sidebar>
         </div>
         {isMobile ? (
-          <Music
-            selected={selectedMusic}
-            setNextSong={setNextSong}
-            setPrevSong={setPrevSong}
-            setRandomSong={shuffleMusics}
-          ></Music>
+          <Music></Music>
         ) : (
           <div className={styles.todo}>
             <TodoContainer

@@ -10,6 +10,7 @@ function App(props) {
     props.auth.observeChange((user) => {
       if (user) {
         setUserObj(user);
+        setLogin(true);
       } else {
         navigate('/');
         setLogin(false);

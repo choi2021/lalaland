@@ -9,10 +9,26 @@ import {
   FaRandom,
 } from 'react-icons/fa';
 
-const Music = ({ selected, setNextSong, setPrevSong, setRandomSong }) => {
+import musics from '../../playlist.json';
+
+const Music = () => {
+  const musicList = musics?.musics.map((item) => {
+    return {
+      ...item,
+      address: `${process.env.PUBLIC_URL}/music${item.address}`,
+    };
+  });
   const [isPlaying, setisPlaying] = useState(false);
   const [onReplay, setOnReplay] = useState(false);
   const audioRef = useRef();
+  const [playlist, setplaylist] = useState([]);
+  const [selected, setSelected] = useState({});
+  const [trackIndex, setTrackIndex] = useState(0);
+  useEffect(() => {
+    setplaylist(musicList);
+    setSelected(musicList[0]);
+  }, []);
+  console.log(playlist);
 
   useEffect(() => {
     audioRef.current.volume = 0.3;
@@ -24,10 +40,25 @@ const Music = ({ selected, setNextSong, setPrevSong, setRandomSong }) => {
   useEffect(() => {
     audioRef.current.addEventListener('ended', () => {
       if (!onReplay) {
-        setNextSong();
+        handleNextSong();
       }
     });
-  }, [audioRef, onReplay, setNextSong]);
+  }, [audioRef, onReplay]);
+
+  const handleShuffle = () => {
+    const arr = Array.from(Array(playlist.length), (_, k) => k);
+    let newArray = [];
+    while (newArray.length < arr.length) {
+      let ranNum = parseInt(Math.random() * arr.length);
+      if (newArray.includes(ranNum)) {
+        continue;
+      }
+      newArray.push(ranNum);
+    }
+    console.log(newArray);
+    setplaylist(newArray.map((idx) => musicList[idx]));
+    setSelected(playlist[0]);
+  };
 
   const handlePlaying = () => {
     setisPlaying(!isPlaying);
@@ -39,11 +70,17 @@ const Music = ({ selected, setNextSong, setPrevSong, setRandomSong }) => {
   };
 
   const handleNextSong = () => {
-    setNextSong();
+    setTrackIndex((curr) => {
+      return curr + 1 >= playlist.length ? 0 : curr + 1;
+    });
+    setSelected(playlist[trackIndex]);
   };
 
   const handlePrevSong = () => {
-    setPrevSong();
+    setTrackIndex((curr) => {
+      return curr - 1 < 0 ? playlist.length - 1 : curr - 1;
+    });
+    setSelected(playlist[trackIndex]);
   };
 
   const handleReplay = () => {
@@ -76,7 +113,7 @@ const Music = ({ selected, setNextSong, setPrevSong, setRandomSong }) => {
         <button className={styles.btn} onClick={handleNextSong}>
           <FaStepForward></FaStepForward>
         </button>
-        <button className={styles.btn} onClick={setRandomSong}>
+        <button className={styles.btn} onClick={handleShuffle}>
           <FaRandom />
         </button>
       </div>
