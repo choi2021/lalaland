@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/lalaland/static/css/main.06f9c5f2.css",
-    "main.js": "/lalaland/static/js/main.9e0a18c5.js",
+    "main.js": "/lalaland/static/js/main.921975c8.js",
     "static/media/bg.jpg": "/lalaland/static/media/bg.78248077b5006dbc8614.jpg",
     "static/media/mobileBg.jpg": "/lalaland/static/media/mobileBg.a0771c62de32ccba81e6.jpg",
     "static/media/YasashiiBold.otf": "/lalaland/static/media/YasashiiBold.adc79dd39f2624598fe7.otf",
@@ -9,10 +9,10 @@
     "static/media/YasashiiBold.ttf": "/lalaland/static/media/YasashiiBold.4499c1e08893e9219f98.ttf",
     "index.html": "/lalaland/index.html",
     "main.06f9c5f2.css.map": "/lalaland/static/css/main.06f9c5f2.css.map",
-    "main.9e0a18c5.js.map": "/lalaland/static/js/main.9e0a18c5.js.map"
+    "main.921975c8.js.map": "/lalaland/static/js/main.921975c8.js.map"
   },
   "entrypoints": [
     "static/css/main.06f9c5f2.css",
-    "static/js/main.9e0a18c5.js"
+    "static/js/main.921975c8.js"
   ]
 }
