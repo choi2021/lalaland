@@ -1,8 +1,8 @@
 import React from 'react';
 import {
   FaThumbsUp,
-  FaHandPointLeft,
-  FaRegLaughSquint,
+  FaRegHandPointUp,
+  FaCheck,
   FaRegTrashAlt,
 } from 'react-icons/fa';
 import styles from './todo.module.css';
@@ -31,10 +31,10 @@ const Todo = ({ type, onDelete, onMove, todo }) => {
       {type === 'finished' && (
         <div className={styles.btns}>
           <button className={styles.btn} onClick={handleMove}>
-            <FaHandPointLeft></FaHandPointLeft>
+            <FaRegHandPointUp></FaRegHandPointUp>
           </button>
           <button className={styles.btn} onClick={handleDelete}>
-            <FaRegLaughSquint></FaRegLaughSquint>
+            <FaCheck></FaCheck>
           </button>
         </div>
       )}
