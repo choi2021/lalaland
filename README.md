@@ -77,6 +77,6 @@ Styled Component와 framer motion을 react-master class를 들으면서 새롭�
 
 3. 아쉬운 점
 
-* 배포를 한 후에 새로고침을 하게되면 404에러가 뜨는 부분에서 client-side rendering의 약점을 알게되었습니다. 서버에 대해서 너무 모르고 react-router를 사용하다보니 <br> 아직 해결하지 못한 부분이라 서버를 공부할 필요성을 느꼈습니다. 서버와 SSR을 위한 NEXT JS에 대해 관심이 생겼습니다.
+* 배포를 한 후에 새로고침을 하게되면 404에러가 뜨는 부분에서 client-side rendering의 약점을 알게되었습니다. 서버에 대해서 너무 모르고 react-router를 사용하다보니 아직 해결하지 못한 부분이라 서버를 공부할 필요성을 느꼈습니다. 서버와 SSR을 위한 NEXT JS에 대해 관심이 생겼습니다.
   
 * 여전히 답답한 css layout부분이었습니다. flex에 대해서는 잘 사용할 수 있었지만 grid에 대해서는 거부감을 가지고 있었는데 공부하면 할수록 필요성을 느끼게 되었습니다. 이후 css layout강의로 해결해 나가려 합니다.
