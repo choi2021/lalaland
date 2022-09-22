@@ -14,7 +14,6 @@
 <p align="left">
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=white"/>
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white">
-<img src="https://img.shields.io/badge/Youtube-000000?style=flat-square&logo=youtube&logoColor=red">
 <img src="https://img.shields.io/badge/React-router-CA4245?style=flat-square&logo=reactrouter&logoColor=red">
 </p>
   
